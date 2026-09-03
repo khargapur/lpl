@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dr. Lal PathLabs — exact colors from official website */
+    --background: 0 0% 100%;
+    --foreground: 225 40% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 225 40% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 40% 14%;
+    /* primary = brand blue #2144A8 */
+    --primary: 225 68% 38%;
+    --primary-foreground: 0 0% 100%;
+    /* secondary = brand yellow #F5B800 */
+    --secondary: 46 100% 48%;
+    --secondary-foreground: 225 40% 14%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 52%;
+    /* accent = brand red #C8102E */
+    --accent: 351 85% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 351 85% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 225 68% 38%;
+    --chart-1: 351 85% 42%;
+    --chart-2: 225 68% 38%;
+    --chart-3: 46 100% 48%;
+    --chart-4: 160 60% 45%;
+    --chart-5: 225 68% 55%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-brand-blue-dark;
+  }
+
+  .btn-yellow {
+    @apply bg-brand-yellow text-dark-text px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-brand-yellow-dark;
+  }
+
+  .btn-red {
+    @apply bg-brand-red text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-brand-red-dark;
+  }
+
+  .section-padding {
+    @apply py-14 md:py-20;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-shadow {
+    @apply shadow-card;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
