@@ -84,7 +84,7 @@ export default function AdminBlogListPage() {
 
     const { error } = await supabase
       .from("blog_posts")
-      .update(updates)
+      .update(updates as never)
       .eq("id", post.id);
 
     if (error) {

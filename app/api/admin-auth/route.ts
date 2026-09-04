@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
+import crypto from "crypto";
 
 const ADMIN_EMAIL = "admin@lallabslucknow.com";
 const SESSION_COOKIE = "admin-session";
@@ -11,7 +12,6 @@ function createToken(email: string): string {
   const secret = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
   const timestamp = Date.now();
   const payload = `${email}:${timestamp}`;
-  const crypto = require("crypto");
   const hmac = crypto.createHmac("sha256", secret).update(payload).digest("hex");
   return Buffer.from(`${payload}:${hmac}`).toString("base64");
 }
@@ -31,7 +31,6 @@ function verifyToken(token: string): string | null {
 
     // Verify HMAC
     const secret = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-    const crypto = require("crypto");
     const expectedHmac = crypto
       .createHmac("sha256", secret)
       .update(`${email}:${timestamp}`)

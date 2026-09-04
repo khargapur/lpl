@@ -3,8 +3,6 @@
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 
-const SESSION_COOKIE = "admin-session";
-
 export function useAdminAuth() {
   const router = useRouter();
 
