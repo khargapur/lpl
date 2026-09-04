@@ -2,13 +2,14 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { useAdminAuth } from "@/hooks/use-admin-auth";
 import { Eye, EyeOff, Lock, Mail, FlaskConical, AlertCircle, Loader2 } from "lucide-react";
 
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirect = searchParams.get("redirect") ?? "/admin";
+  const { checkAuth, login } = useAdminAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,21 +18,11 @@ function LoginForm() {
   const [checkingSession, setCheckingSession] = useState(true);
   const [error, setError] = useState("");
 
-  const supabase = createSupabaseBrowserClient();
-
-  // If already logged in as admin, redirect immediately
   useEffect(() => {
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
-      if (session) {
-        const { data } = await supabase
-          .from("admin_profiles")
-          .select("id")
-          .eq("id", session.user.id)
-          .maybeSingle();
-        if (data) {
-          router.replace(redirect);
-          return;
-        }
+    checkAuth().then(({ authenticated }) => {
+      if (authenticated) {
+        router.replace(redirect);
+        return;
       }
       setCheckingSession(false);
     });
@@ -43,27 +34,10 @@ function LoginForm() {
     setError("");
     setLoading(true);
 
-    const { data, error: signInError } = await supabase.auth.signInWithPassword({
-      email: email.trim().toLowerCase(),
-      password,
-    });
+    const { success, error: loginError } = await login(email, password);
 
-    if (signInError || !data.session) {
-      setError("Invalid email or password.");
-      setLoading(false);
-      return;
-    }
-
-    // Confirm this user is an approved admin
-    const { data: profile } = await supabase
-      .from("admin_profiles")
-      .select("id")
-      .eq("id", data.session.user.id)
-      .maybeSingle();
-
-    if (!profile) {
-      await supabase.auth.signOut();
-      setError("Access denied. This account is not authorised as an admin.");
+    if (!success) {
+      setError(loginError || "Invalid email or password.");
       setLoading(false);
       return;
     }

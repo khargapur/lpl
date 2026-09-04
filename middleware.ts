@@ -1,35 +1,53 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import crypto from "crypto";
+
+const SESSION_COOKIE = "admin-session";
+const SESSION_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
+
+function verifyToken(token: string): string | null {
+  try {
+    const decoded = Buffer.from(token, "base64").toString("utf-8");
+    const parts = decoded.split(":");
+    if (parts.length !== 3) return null;
+    const [email, timestampStr, hmac] = parts;
+    const timestamp = parseInt(timestampStr, 10);
+    if (isNaN(timestamp)) return null;
+
+    const age = Date.now() - timestamp;
+    if (age > SESSION_MAX_AGE * 1000) return null;
+
+    const secret = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+    const expectedHmac = crypto
+      .createHmac("sha256", secret)
+      .update(`${email}:${timestamp}`)
+      .digest("hex");
+
+    if (hmac !== expectedHmac) return null;
+
+    return email;
+  } catch {
+    return null;
+  }
+}
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Only guard /admin routes (but not /admin/login itself)
   if (!pathname.startsWith("/admin")) return NextResponse.next();
   if (pathname === "/admin/login") return NextResponse.next();
 
-  // Read the Supabase access token from the cookie set by the browser client
-  const accessToken =
-    req.cookies.get("sb-access-token")?.value ??
-    req.cookies.get(`sb-${process.env.NEXT_PUBLIC_SUPABASE_URL?.split("//")[1]?.split(".")[0]}-auth-token`)?.value;
+  const token = req.cookies.get(SESSION_COOKIE)?.value;
 
-  if (!accessToken) {
+  if (!token) {
     const loginUrl = new URL("/admin/login", req.url);
     loginUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(loginUrl);
   }
 
-  // Verify the token is valid by calling Supabase's getUser
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    { auth: { persistSession: false } }
-  );
+  const email = verifyToken(token);
 
-  const { data: { user }, error } = await supabase.auth.getUser(accessToken);
-
-  if (error || !user) {
+  if (!email) {
     const loginUrl = new URL("/admin/login", req.url);
     loginUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(loginUrl);

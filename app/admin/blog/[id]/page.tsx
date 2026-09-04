@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { useAdminAuth } from "@/hooks/use-admin-auth";
 import type { BlogPost, BlogPostInsert } from "@/lib/types";
 import { ArrowLeft, Loader2, Save, Trash2, FlaskConical, LogOut } from "lucide-react";
 
@@ -23,6 +24,7 @@ export default function EditBlogPostPage() {
   const params = useParams() as { id: string };
   const postId = Number(params.id);
   const supabase = createSupabaseBrowserClient();
+  const { checkAuth, logout } = useAdminAuth();
   const [authChecked, setAuthChecked] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -40,18 +42,8 @@ export default function EditBlogPostPage() {
   const [status, setStatus] = useState<"draft" | "published">("draft");
 
   const loadPost = useCallback(async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      router.replace("/admin/login");
-      return;
-    }
-    const { data: profile } = await supabase
-      .from("admin_profiles")
-      .select("id")
-      .eq("id", session.user.id)
-      .maybeSingle();
-    if (!profile) {
-      supabase.auth.signOut();
+    const { authenticated } = await checkAuth();
+    if (!authenticated) {
       router.replace("/admin/login");
       return;
     }
@@ -171,10 +163,7 @@ export default function EditBlogPostPage() {
               Blog List
             </Link>
             <button
-              onClick={() => {
-                supabase.auth.signOut();
-                router.replace("/admin/login");
-              }}
+              onClick={() => logout()}
               className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-red-400 border border-slate-700 hover:border-red-500/40 rounded-lg px-3 py-1.5 transition-colors"
             >
               <LogOut className="w-3.5 h-3.5" />

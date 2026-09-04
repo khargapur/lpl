@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { useAdminAuth } from "@/hooks/use-admin-auth";
 import type { BlogPost } from "@/lib/types";
 import {
   ArrowLeft,
@@ -27,22 +28,11 @@ export default function AdminBlogListPage() {
   const [deleteId, setDeleteId] = useState<number | null>(null);
   const [deleting, setDeleting] = useState(false);
   const supabase = createSupabaseBrowserClient();
+  const { checkAuth, logout } = useAdminAuth();
 
   const checkAuthAndLoad = useCallback(async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      router.replace("/admin/login");
-      return;
-    }
-
-    const { data: profile } = await supabase
-      .from("admin_profiles")
-      .select("id")
-      .eq("id", session.user.id)
-      .maybeSingle();
-
-    if (!profile) {
-      supabase.auth.signOut();
+    const { authenticated } = await checkAuth();
+    if (!authenticated) {
       router.replace("/admin/login");
       return;
     }
@@ -139,10 +129,7 @@ export default function AdminBlogListPage() {
               Dashboard
             </Link>
             <button
-              onClick={() => {
-                supabase.auth.signOut();
-                router.replace("/admin/login");
-              }}
+              onClick={() => logout()}
               className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-red-400 border border-slate-700 hover:border-red-500/40 rounded-lg px-3 py-1.5 transition-colors"
             >
               <LogOut className="w-3.5 h-3.5" />

@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { useAdminAuth } from "@/hooks/use-admin-auth";
 import type { BlogPostInsert } from "@/lib/types";
 import { ArrowLeft, Loader2, Save, FlaskConical, LogOut } from "lucide-react";
 
@@ -30,6 +31,7 @@ function slugify(text: string): string {
 export default function NewBlogPostPage() {
   const router = useRouter();
   const supabase = createSupabaseBrowserClient();
+  const { checkAuth, logout } = useAdminAuth();
   const [authChecked, setAuthChecked] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -44,19 +46,9 @@ export default function NewBlogPostPage() {
   const [readTime, setReadTime] = useState("5 min read");
   const [status, setStatus] = useState<"draft" | "published">("draft");
 
-  const checkAuth = useCallback(async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      router.replace("/admin/login");
-      return;
-    }
-    const { data: profile } = await supabase
-      .from("admin_profiles")
-      .select("id")
-      .eq("id", session.user.id)
-      .maybeSingle();
-    if (!profile) {
-      supabase.auth.signOut();
+  const checkAuthCb = useCallback(async () => {
+    const { authenticated } = await checkAuth();
+    if (!authenticated) {
       router.replace("/admin/login");
       return;
     }
@@ -65,8 +57,8 @@ export default function NewBlogPostPage() {
   }, []);
 
   useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
+    checkAuthCb();
+  }, [checkAuthCb]);
 
   useEffect(() => {
     if (!slugTouched && title) {
@@ -143,10 +135,7 @@ export default function NewBlogPostPage() {
               Blog List
             </Link>
             <button
-              onClick={() => {
-                supabase.auth.signOut();
-                router.replace("/admin/login");
-              }}
+              onClick={() => logout()}
               className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-red-400 border border-slate-700 hover:border-red-500/40 rounded-lg px-3 py-1.5 transition-colors"
             >
               <LogOut className="w-3.5 h-3.5" />

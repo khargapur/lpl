@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { useAdminAuth } from "@/hooks/use-admin-auth";
 import {
   FlaskConical,
   LogOut,
@@ -14,7 +14,6 @@ import {
   ChevronRight,
   Loader2,
 } from "lucide-react";
-import type { User } from "@supabase/supabase-js";
 
 const STATS = [
   { label: "Total Tests", value: "—", icon: TestTube2, color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20" },
@@ -31,31 +30,18 @@ const QUICK_LINKS = [
 
 export default function AdminDashboardPage() {
   const router = useRouter();
-  const [user, setUser] = useState<User | null>(null);
+  const { checkAuth, logout } = useAdminAuth();
+  const [email, setEmail] = useState<string | undefined>();
   const [loading, setLoading] = useState(true);
   const [loggingOut, setLoggingOut] = useState(false);
-  const supabase = createSupabaseBrowserClient();
 
   useEffect(() => {
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
-      if (!session) {
+    checkAuth().then(({ authenticated, email }) => {
+      if (!authenticated) {
         router.replace("/admin/login");
         return;
       }
-      // Verify admin status
-      const { data: profile } = await supabase
-        .from("admin_profiles")
-        .select("id")
-        .eq("id", session.user.id)
-        .maybeSingle();
-
-      if (!profile) {
-        await supabase.auth.signOut();
-        router.replace("/admin/login");
-        return;
-      }
-
-      setUser(session.user);
+      setEmail(email);
       setLoading(false);
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -63,8 +49,7 @@ export default function AdminDashboardPage() {
 
   async function handleLogout() {
     setLoggingOut(true);
-    await supabase.auth.signOut();
-    router.replace("/admin/login");
+    await logout();
   }
 
   if (loading) {
@@ -88,7 +73,7 @@ export default function AdminDashboardPage() {
             <span className="hidden sm:block text-slate-600 text-xs">— Dr. Lal PathLabs</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="hidden sm:block text-xs text-slate-500 truncate max-w-[160px]">{user?.email}</span>
+            <span className="hidden sm:block text-xs text-slate-500 truncate max-w-[160px]">{email}</span>
             <button
               onClick={handleLogout}
               disabled={loggingOut}
@@ -107,7 +92,7 @@ export default function AdminDashboardPage() {
           <LayoutDashboard className="w-5 h-5 text-blue-400" />
           <div>
             <h1 className="text-lg font-bold text-white">Dashboard</h1>
-            <p className="text-slate-400 text-xs mt-0.5">Welcome back, {user?.email?.split("@")[0]}</p>
+            <p className="text-slate-400 text-xs mt-0.5">Welcome back, {email?.split("@")[0]}</p>
           </div>
         </div>
 
@@ -148,9 +133,8 @@ export default function AdminDashboardPage() {
         {/* Session info */}
         <div className="rounded-xl border border-slate-800 bg-slate-900 p-5 text-xs text-slate-500 space-y-1">
           <p className="font-semibold text-slate-400 mb-2">Session Details</p>
-          <p>Email: <span className="text-slate-300">{user?.email}</span></p>
-          <p>User ID: <span className="text-slate-300 font-mono">{user?.id}</span></p>
-          <p>Last sign-in: <span className="text-slate-300">{user?.last_sign_in_at ? new Date(user.last_sign_in_at).toLocaleString("en-IN") : "—"}</span></p>
+          <p>Email: <span className="text-slate-300">{email}</span></p>
+          <p>Session: <span className="text-slate-300 font-mono">active</span></p>
         </div>
       </main>
     </div>
