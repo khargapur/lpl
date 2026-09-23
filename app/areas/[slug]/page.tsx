@@ -160,7 +160,7 @@ export default async function AreaPage({
                   <Button asChild className="bg-brand-yellow hover:bg-brand-yellow-dark text-brand-blue font-bold rounded">
                     <Link href="/book-test">Book Test in {area.shortName} <ChevronRight className="w-4 h-4 ml-1" /></Link>
                   </Button>
-                  <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-brand-blue rounded font-semibold">
+                  <Button asChild className="border border-white bg-transparent text-white hover:bg-white hover:text-brand-blue rounded font-semibold">
                     <a href={`tel:${SITE_CONFIG.phone.replace(/\s/g, "")}`}>
                       <Phone className="w-4 h-4 mr-2" /> {SITE_CONFIG.phone}
                     </a>

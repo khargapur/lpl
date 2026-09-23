@@ -251,7 +251,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                   <Button asChild className="bg-green-600 hover:bg-green-700 text-white font-bold rounded w-full">
                     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"><MessageCircle className="w-4 h-4 mr-2" /> WhatsApp Us</a>
                   </Button>
-                  <Button asChild variant="outline" className="border-white/40 text-white hover:bg-white/10 rounded w-full text-sm">
+                  <Button asChild className="bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold rounded w-full text-sm">
                     <a href={`tel:${phoneClean}`}><Phone className="w-4 h-4 mr-2" /> {SITE_CONFIG.phone}</a>
                   </Button>
                 </div>
