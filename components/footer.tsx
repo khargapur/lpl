@@ -53,7 +53,7 @@ export default function Footer() {
               areas of Lucknow.
             </p>
             <p className="text-white/45 text-xs leading-relaxed border-t border-white/10 pt-3">
-              This is <span className="font-semibold text-white/60">not</span> the official website of Dr. Lal PathLabs Ltd. This site belongs to an authorized Patient Service Centre franchise operating in Lucknow.
+              This is <span className="font-semibold text-white/60">not</span> the official website of Dr Lal PathLabs Ltd. This site belongs to an authorized Patient Service Centre franchise operating in Lucknow.
             </p>
 
             <div className="flex gap-3">

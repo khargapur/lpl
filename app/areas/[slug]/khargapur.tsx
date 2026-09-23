@@ -162,7 +162,6 @@ export function KhargapurJsonLd() {
       addressCountry: "IN",
     },
     areaServed: { "@type": "Place", name: "Khargapur, Lucknow" },
-    medicalSpecialty: "Pathology",
     description:
       "Dr Lal PathLabs Patient Service Centre in Khargapur, Gomti Nagar, Lucknow (franchise code CC14735). Sample collection and test-booking services; home sample collection may be available in Khargapur and nearby areas, subject to availability. Call +91 9451155402.",
   };
@@ -378,9 +377,8 @@ export function KhargapurPage() {
 
         <Section title="Home Sample Collection in Khargapur" gray>
           <p>
-            Home sample collection is available in Khargapur and selected nearby areas, subject to
-            availability. A trained phlebotomy professional collects the sample at the scheduled
-            location according to applicable sample-collection procedures.
+            Home sample collection may be available in Khargapur and selected nearby areas, subject
+            to availability and applicable terms.
           </p>
           <p>
             To request home collection, call or WhatsApp {PHONE_DISPLAY} or use the{" "}
