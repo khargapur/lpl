@@ -20,27 +20,27 @@ export const AREAS: Area[] = [
     name: "Khargapur",
     shortName: "Khargapur",
     intro:
-      "Our Patient Service Centre is located right here in Khargapur, so residents get the fastest turnaround in all of Lucknow — walk in for same-day sample collection or book a free home visit anywhere in the neighbourhood.",
+      "The Dr Lal PathLabs Patient Service Centre (franchise code CC14735) is located in Khargapur, Gomti Nagar — visit for sample collection and test bookings, or request home sample collection subject to availability.",
     residentialNote:
-      "A fast-growing residential pocket on the edge of Gomti Nagar, popular with families and working professionals who want diagnostic services close to home.",
-    landmarks: ["Khargapur village market", "Shaheed Path", "Gomti Nagar Extension crossing", "Amity University road"],
-    distanceNote: "Our lab is located in Khargapur itself — most addresses are served within 30–45 minutes of booking.",
+      "A residential sublocality of Gomti Nagar in east Lucknow, made up of plotted colonies and newer housing pockets such as Awadhpuri-2, home to families and working professionals.",
+    landmarks: ["Sanskar Vatika, Awadhpuri-2", "Shaheed Path", "Vineet Khand, Gomti Nagar", "Saraswati Puram, Khargapur"],
+    distanceNote: "Our Patient Service Centre is located in Khargapur itself (226010). Home sample collection may be available subject to test, location and collection-slot availability.",
     faqs: [
       {
-        q: "Where is your lab located in Khargapur?",
-        a: "Our Patient Service Centre is in Khargapur, Gomti Nagar, Lucknow 226010 — walk-ins are welcome Mon–Sat 7 AM–9 PM and Sun 8 AM–2 PM.",
+        q: "Is there a blood test centre in Khargapur?",
+        a: "Yes. The Dr Lal PathLabs Patient Service Centre (franchise code CC14735) is a physical, operating centre in Khargapur. You can visit the Patient Service Centre for applicable sample collection and test-booking services.",
       },
       {
-        q: "Do you offer home sample collection in Khargapur?",
-        a: "Yes, and it's free. Because our centre is in Khargapur, home collection here is usually the fastest — often within the hour on request.",
+        q: "Where exactly is the centre in Khargapur?",
+        a: "संस्कार वाटिका के सामने, अवधपुरी-2, खरगापुर, गोमती नगर, लखनऊ – 226010 (opposite Sanskar Vatika, Awadhpuri-2). Phone: +91 9451155402.",
       },
       {
-        q: "How fast will I get my reports in Khargapur?",
-        a: "Most routine tests (CBC, sugar, thyroid) are reported within 24 hours on WhatsApp and email; detailed packages take 24–48 hours.",
+        q: "Is home sample collection available in Khargapur?",
+        a: "Home sample collection may be available for eligible tests and locations in the Khargapur area, subject to collection-slot availability. Call +91 9451155402 to confirm a slot.",
       },
       {
-        q: "Which health packages are popular in Khargapur?",
-        a: "Super 1 (40 tests, ₹1250) for annual screening and Super 2 (60 tests, ₹1550) for 30+ adults are the most booked packages here.",
+        q: "How do I book a blood test?",
+        a: "Call or WhatsApp +91 9451155402, or book online. Keep your doctor's test list or the test names ready, along with your preferred date and slot.",
       },
     ],
   },
