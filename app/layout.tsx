@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["MedicalOrganization", "MedicalBusiness", "LocalBusiness"],
+        "@type": ["MedicalOrganization", "MedicalBusiness", "MedicalClinic", "LocalBusiness"],
         "@id": `${BASE_URL}/#organization`,
         name: SITE_CONFIG.name,
         alternateName: ["Dr Lal PathLabs Lucknow", "Dr Lal PathLabs Gomti Nagar", "Dr Lal PathLabs Khargapur"],

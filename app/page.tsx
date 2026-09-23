@@ -54,6 +54,9 @@ export default function HomePage() {
     <>
       <Navbar />
       <main>
+        <h1 className="sr-only">
+          Blood Test &amp; Health Checkup in Khargapur, Gomti Nagar, Lucknow – Dr Lal PathLabs
+        </h1>
         <Hero />
 
         {/* Popular Tests */}
