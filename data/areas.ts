@@ -22,8 +22,8 @@ export const AREAS: Area[] = [
     intro:
       "The Dr Lal PathLabs Patient Service Centre (franchise code CC14735) is located in Khargapur, Gomti Nagar — visit for sample collection and test bookings, or request home sample collection subject to availability.",
     residentialNote:
-      "A residential sublocality of Gomti Nagar in east Lucknow, made up of plotted colonies and newer housing pockets such as Awadhpuri-2, home to families and working professionals.",
-    landmarks: ["Sanskar Vatika, Awadhpuri-2", "Shaheed Path", "Vineet Khand, Gomti Nagar", "Saraswati Puram, Khargapur"],
+      "The Dr Lal PathLabs Patient Service Centre (franchise code CC14735) is located in Khargapur, Gomti Nagar — opposite Sanskar Vatika, Awadhpuri-2.",
+    landmarks: ["Sanskar Vatika, Awadhpuri-2", "Khargapur, Gomti Nagar", "Lucknow – 226010"],
     distanceNote: "Our Patient Service Centre is located in Khargapur itself (226010). Home sample collection may be available subject to test, location and collection-slot availability.",
     faqs: [
       {
