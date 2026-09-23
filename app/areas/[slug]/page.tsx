@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { AREAS, AREA_SLUGS, getArea } from "@/data/areas";
+import { KhargapurPage, KhargapurJsonLd, KHARGAPUR_SEO } from "./khargapur";
 
 const BASE_URL = "https://www.bloodtestinlucknow.com";
 
@@ -33,6 +34,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const area = getArea(slug);
   if (!area) return {};
+  if (slug === "khargapur") {
+    return {
+      title: KHARGAPUR_SEO.title,
+      description: KHARGAPUR_SEO.description,
+      alternates: { canonical: "/areas/khargapur" },
+      openGraph: {
+        title: KHARGAPUR_SEO.title,
+        description: KHARGAPUR_SEO.description,
+        url: `${BASE_URL}/areas/khargapur`,
+      },
+    };
+  }
   return {
     title: `Blood Test in ${area.name}, Lucknow | Free Home Sample Collection | Dr. Lal PathLabs`,
     description: `Book blood tests & health checkups in ${area.name}, Lucknow with free home sample collection. NABL-accredited Dr. Lal PathLabs centre — CBC ₹210, packages from ₹1250. Call ${SITE_CONFIG.phone}.`,
@@ -69,6 +82,14 @@ export default async function AreaPage({
   const { slug } = await params;
   const area = getArea(slug);
   if (!area) notFound();
+  if (slug === "khargapur") {
+    return (
+      <>
+        <KhargapurJsonLd />
+        <KhargapurPage />
+      </>
+    );
+  }
 
   const pageUrl = `${BASE_URL}/areas/${area.slug}`;
 
