@@ -16,7 +16,7 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const BASE_URL = "https://lallabslucknow.com";
+const BASE_URL = "https://www.bloodtestinlucknow.com";
 
 export const metadata: Metadata = {
   title: {

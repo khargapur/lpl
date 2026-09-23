@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Health Blog | Dr. Lal PathLabs Lucknow",
     description: "Tips on blood tests, diabetes, thyroid health, vitamin deficiency and more from Lucknow's trusted diagnostic centre.",
-    url: "https://lallabslucknow.com/blog",
+    url: "https://www.bloodtestinlucknow.com/blog",
   },
   twitter: {
     card: "summary_large_image",
@@ -43,8 +43,8 @@ export default async function BlogPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://lallabslucknow.com" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://lallabslucknow.com/blog" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bloodtestinlucknow.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.bloodtestinlucknow.com/blog" },
     ],
   };
 

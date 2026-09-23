@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Download Test Reports | Dr. Lal PathLabs Lucknow",
     description: "Download your test reports or request via WhatsApp. Dr. Lal PathLabs, Gomti Nagar, Lucknow.",
-    url: "https://lallabslucknow.com/download-report",
+    url: "https://www.bloodtestinlucknow.com/download-report",
   },
   twitter: {
     card: "summary_large_image",

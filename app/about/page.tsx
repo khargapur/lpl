@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Dr. Lal PathLabs Gomti Nagar Lucknow | NABL Accredited Diagnostic Centre",
     description: "NABL accredited lab in Khargapur, Gomti Nagar, Lucknow. Accurate results, affordable prices, free home sample collection across Lucknow.",
-    url: "https://lallabslucknow.com/about",
+    url: "https://www.bloodtestinlucknow.com/about",
   },
 };
 
@@ -37,8 +37,8 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://lallabslucknow.com" },
-      { "@type": "ListItem", position: 2, name: "About", item: "https://lallabslucknow.com/about" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bloodtestinlucknow.com" },
+      { "@type": "ListItem", position: 2, name: "About", item: "https://www.bloodtestinlucknow.com/about" },
     ],
   };
 

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Health Checkup Packages Lucknow | Starting ₹1250 | Dr. Lal PathLabs",
     description: "Super 1 ₹1250, Super 2 ₹1550, Super 3 ₹2250, Super 4 ₹2550. Book health packages in Gomti Nagar, Lucknow.",
-    url: "https://lallabslucknow.com/health-packages",
+    url: "https://www.bloodtestinlucknow.com/health-packages",
   },
   twitter: {
     card: "summary_large_image",
@@ -36,8 +36,8 @@ export default function HealthPackagesPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://lallabslucknow.com" },
-      { "@type": "ListItem", position: 2, name: "Health Packages", item: "https://lallabslucknow.com/health-packages" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bloodtestinlucknow.com" },
+      { "@type": "ListItem", position: 2, name: "Health Packages", item: "https://www.bloodtestinlucknow.com/health-packages" },
     ],
   };
 

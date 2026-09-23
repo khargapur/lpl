@@ -3,7 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
 import crypto from "crypto";
 
-const ADMIN_EMAIL = "admin@lallabslucknow.com";
+const ADMIN_EMAIL = "admin@www.bloodtestinlucknow.com";
 const SESSION_COOKIE = "admin-session";
 const SESSION_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
 

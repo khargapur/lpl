@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Dr. Lal PathLabs Khargapur, Gomti Nagar Lucknow | Blood Test & Health Checkup",
     description:
       "NABL accredited pathology lab in Khargapur, Gomti Nagar, Lucknow. CBC ₹210, Blood Sugar ₹50, Health Packages from ₹1250. Book now, free home collection!",
-    url: "https://lallabslucknow.com",
+    url: "https://www.bloodtestinlucknow.com",
     images: [{ url: "/images/maxresdefault.jpg", width: 1280, height: 720, alt: "Dr. Lal PathLabs Khargapur, Gomti Nagar Lucknow" }],
   },
   twitter: {

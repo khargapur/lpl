@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Book Blood Test Online in Lucknow | Dr. Lal PathLabs",
     description: "Easy online booking for blood tests and home collection in Gomti Nagar, Lucknow. Fast, affordable, NABL accredited.",
-    url: "https://lallabslucknow.com/book-test",
+    url: "https://www.bloodtestinlucknow.com/book-test",
   },
   twitter: {
     card: "summary_large_image",
@@ -32,8 +32,8 @@ export default function BookTestPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://lallabslucknow.com" },
-      { "@type": "ListItem", position: 2, name: "Book a Test", item: "https://lallabslucknow.com/book-test" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bloodtestinlucknow.com" },
+      { "@type": "ListItem", position: 2, name: "Book a Test", item: "https://www.bloodtestinlucknow.com/book-test" },
     ],
   };
 
