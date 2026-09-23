@@ -36,7 +36,7 @@ export async function generateMetadata({
   if (!area) return {};
   if (slug === "khargapur") {
     return {
-      title: KHARGAPUR_SEO.title,
+      title: { absolute: KHARGAPUR_SEO.title },
       description: KHARGAPUR_SEO.description,
       alternates: { canonical: "/areas/khargapur" },
       openGraph: {
