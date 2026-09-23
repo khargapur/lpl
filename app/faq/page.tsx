@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Frequently Asked Questions | Dr. Lal PathLabs Lucknow",
     description: "Answers to common questions about blood tests, home collection and health packages at Dr. Lal PathLabs, Gomti Nagar, Lucknow.",
-    url: "https://lallabslucknow.com/faq",
+    url: "https://www.bloodtestinlucknow.com/faq",
   },
   twitter: {
     card: "summary_large_image",
@@ -42,8 +42,8 @@ export default function FAQPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://lallabslucknow.com" },
-      { "@type": "ListItem", position: 2, name: "FAQ", item: "https://lallabslucknow.com/faq" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bloodtestinlucknow.com" },
+      { "@type": "ListItem", position: 2, name: "FAQ", item: "https://www.bloodtestinlucknow.com/faq" },
     ],
   };
 

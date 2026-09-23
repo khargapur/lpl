@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Dr. Lal PathLabs Lucknow | Book Test or Home Collection",
     description: "Call +91 9451155402 for blood tests and home collection in Khargapur, Gomti Nagar, Lucknow. Mon–Sat 7AM–9PM, Sun 8AM–2PM.",
-    url: "https://lallabslucknow.com/contact",
+    url: "https://www.bloodtestinlucknow.com/contact",
   },
   twitter: {
     card: "summary_large_image",
@@ -28,8 +28,8 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://lallabslucknow.com" },
-      { "@type": "ListItem", position: 2, name: "Contact", item: "https://lallabslucknow.com/contact" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bloodtestinlucknow.com" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.bloodtestinlucknow.com/contact" },
     ],
   };
 

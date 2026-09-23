@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Terms & Conditions | Dr. Lal PathLabs Lucknow",
     description: "Terms and conditions for using the services of Dr. Lal PathLabs Patient Service Centre, Lucknow.",
-    url: "https://lallabslucknow.com/terms",
+    url: "https://www.bloodtestinlucknow.com/terms",
   },
   robots: { index: true, follow: true },
 };

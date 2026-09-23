@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/admin/"],
       },
     ],
-    sitemap: "https://lallabslucknow.com/sitemap.xml",
-    host: "https://lallabslucknow.com",
+    sitemap: "https://www.bloodtestinlucknow.com/sitemap.xml",
+    host: "https://www.bloodtestinlucknow.com",
   };
 }

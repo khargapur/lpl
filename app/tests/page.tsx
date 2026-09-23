@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Diagnostic Tests in Lucknow | Dr. Lal PathLabs Gomti Nagar",
     description:
       "All blood tests at lowest prices. CBC ₹210, Sugar ₹50, HbA1c ₹400. Book online or home collection in Lucknow.",
-    url: "https://lallabslucknow.com/tests",
+    url: "https://www.bloodtestinlucknow.com/tests",
   },
   twitter: {
     card: "summary_large_image",
@@ -65,8 +65,8 @@ export default async function TestsPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://lallabslucknow.com" },
-      { "@type": "ListItem", position: 2, name: "Tests", item: "https://lallabslucknow.com/tests" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bloodtestinlucknow.com" },
+      { "@type": "ListItem", position: 2, name: "Tests", item: "https://www.bloodtestinlucknow.com/tests" },
     ],
   };
 

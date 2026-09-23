@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.published_at ?? post.created_at,
       authors: [SITE_CONFIG.name],
       images: [{ url: post.image_url, alt: post.title }],
-      url: `https://lallabslucknow.com/blog/${post.slug}`,
+      url: `https://www.bloodtestinlucknow.com/blog/${post.slug}`,
     },
     twitter: {
       card: "summary_large_image",
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       "@type": "Organization",
       name: SITE_CONFIG.name,
-      url: "https://lallabslucknow.com",
+      url: "https://www.bloodtestinlucknow.com",
     },
     publisher: {
       "@type": "Organization",
@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: Props) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://lallabslucknow.com/blog/${post.slug}`,
+      "@id": `https://www.bloodtestinlucknow.com/blog/${post.slug}`,
     },
   };
 

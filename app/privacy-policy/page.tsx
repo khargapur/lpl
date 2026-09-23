@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Privacy Policy | Dr. Lal PathLabs Lucknow",
     description: "Learn how Dr. Lal PathLabs Patient Service Centre collects, uses, and protects your personal information.",
-    url: "https://lallabslucknow.com/privacy-policy",
+    url: "https://www.bloodtestinlucknow.com/privacy-policy",
   },
   robots: { index: true, follow: true },
 };

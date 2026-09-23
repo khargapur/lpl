@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Home Blood Sample Collection in Lucknow | Dr. Lal PathLabs",
     description: "Free home sample collection across all areas of Lucknow. Book online or call +91 9451155402.",
-    url: "https://lallabslucknow.com/home-collection",
+    url: "https://www.bloodtestinlucknow.com/home-collection",
   },
   twitter: {
     card: "summary_large_image",
@@ -37,8 +37,8 @@ export default function HomeCollectionPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://lallabslucknow.com" },
-      { "@type": "ListItem", position: 2, name: "Home Collection", item: "https://lallabslucknow.com/home-collection" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bloodtestinlucknow.com" },
+      { "@type": "ListItem", position: 2, name: "Home Collection", item: "https://www.bloodtestinlucknow.com/home-collection" },
     ],
   };
 

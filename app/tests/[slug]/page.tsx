@@ -28,7 +28,7 @@ import {
   IndianRupee,
 } from "lucide-react";
 
-const BASE_URL = "https://lallabslucknow.com";
+const BASE_URL = "https://www.bloodtestinlucknow.com";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
