@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: `%s | Dr. Lal PathLabs Lucknow`,
   },
   description:
-    "Trusted Dr. Lal PathLabs Patient Service Centre in Khargapur, Gomti Nagar, Lucknow. Book blood tests, CBC, HbA1c, Lipid Profile, fever panel & health checkup packages. Free home sample collection. NABL accredited lab. Reports via WhatsApp in 24 hrs.",
+    "Authorized Patient Service Centre of Dr Lal PathLabs in Khargapur, Gomti Nagar, Lucknow. Book blood tests, health checkups and health packages. Home sample collection may be available, subject to availability.",
   keywords: [
     "Dr Lal PathLabs Lucknow",
     "Dr Lal PathLabs Gomti Nagar",
@@ -41,7 +41,6 @@ export const metadata: Metadata = {
     "lipid profile Lucknow",
     "KFT test Lucknow",
     "fever panel test Lucknow",
-    "NABL accredited lab Lucknow",
     "medical lab Uttar Pradesh",
     "health packages Lucknow",
     "thyroid test Lucknow",
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     title: "Dr. Lal PathLabs Khargapur, Gomti Nagar Lucknow | Blood Test & Diagnostic Centre",
     description:
-      "Book blood tests, health checkups & home sample collection in Khargapur, Gomti Nagar, Lucknow. NABL accredited Dr. Lal PathLabs – fast reports, affordable prices.",
+      "Book blood tests, health checkups and home sample collection in Khargapur, Gomti Nagar, Lucknow. Authorized Patient Service Centre of Dr Lal PathLabs.",
     images: [
       {
         url: "/images/maxresdefault.jpg",
@@ -75,9 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Lal PathLabs Khargapur, Gomti Nagar Lucknow | Blood Test & Diagnostic Centre",
+    title: "Dr Lal PathLabs Khargapur, Gomti Nagar Lucknow | Blood Test & Home Sample Collection",
     description:
-      "NABL accredited pathology lab in Khargapur, Gomti Nagar, Lucknow. Book CBC, sugar, thyroid, fever panel & health packages. Free home collection.",
+      "Blood tests, health checkups and home sample collection in Khargapur, Gomti Nagar, Lucknow. Authorized Patient Service Centre of Dr Lal PathLabs.",
     images: ["/images/maxresdefault.jpg"],
   },
   robots: {
@@ -104,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         name: SITE_CONFIG.name,
         alternateName: ["Dr Lal PathLabs Lucknow", "Dr Lal PathLabs Gomti Nagar", "Dr Lal PathLabs Khargapur"],
         description:
-          "Authorized Patient Service Centre of Dr. Lal PathLabs in Khargapur, Gomti Nagar, Lucknow. Offering NABL-accredited blood tests, health packages and free home sample collection.",
+          "Authorized Patient Service Centre of Dr Lal PathLabs in Khargapur, Gomti Nagar, Lucknow. Blood tests, health checkup packages and diagnostic test booking services. Home sample collection may be available, subject to availability.",
         url: BASE_URL,
         logo: {
           "@type": "ImageObject",
@@ -122,34 +121,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           postalCode: "226010",
           addressCountry: "IN",
         },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: "26.8361261",
-          longitude: "81.0224694",
-        },
         hasMap: SITE_CONFIG.mapsUrl,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            opens: "07:00",
-            closes: "21:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: "Sunday",
-            opens: "08:00",
-            closes: "14:00",
-          },
-        ],
-        priceRange: "₹₹",
         currenciesAccepted: "INR",
-        paymentAccepted: "Cash, Credit Card, Debit Card, UPI, Google Pay, PhonePe, Paytm",
         areaServed: [
           { "@type": "City", name: "Lucknow" },
           { "@type": "State", name: "Uttar Pradesh" },
         ],
-        medicalSpecialty: "Pathology",
         availableService: [
           { "@type": "MedicalTest", name: "Complete Blood Count (CBC)" },
           { "@type": "MedicalTest", name: "Blood Sugar Test" },
