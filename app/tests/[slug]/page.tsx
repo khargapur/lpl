@@ -416,7 +416,7 @@ export default async function TestDetailPage({ params }: PageProps) {
                       <Home className="w-4 h-4 mr-2" /> Home Collection
                     </a>
                   </Button>
-                  <Button asChild variant="outline" className="border-white/40 text-white hover:bg-white/10 rounded w-full text-sm">
+                  <Button asChild className="bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold rounded w-full text-sm">
                     <a href={`tel:${phoneClean}`}>
                       <Phone className="w-4 h-4 mr-2" /> {SITE_CONFIG.phone}
                     </a>
@@ -652,7 +652,7 @@ export default async function TestDetailPage({ params }: PageProps) {
                     <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="border-white/40 text-white hover:bg-white/10 rounded px-6">
+                <Button asChild className="bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold rounded px-6">
                   <a href={`tel:${phoneClean}`}>
                     <Phone className="w-4 h-4 mr-2" /> Call
                   </a>
