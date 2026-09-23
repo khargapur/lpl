@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
 
 const quickLinks = [
@@ -49,9 +49,8 @@ export default function Footer() {
             </div>
 
             <p className="text-white/75 text-sm leading-relaxed">
-              Authorized Patient Service Centre of Dr. Lal PathLabs — India&apos;s most
-              trusted diagnostic chain. Serving Lucknow with NABL-accredited
-              quality pathology services.
+              Authorized Patient Service Centre of Dr Lal PathLabs serving Khargapur and nearby
+              areas of Lucknow.
             </p>
             <p className="text-white/45 text-xs leading-relaxed border-t border-white/10 pt-3">
               This is <span className="font-semibold text-white/60">not</span> the official website of Dr. Lal PathLabs Ltd. This site belongs to an authorized Patient Service Centre franchise operating in Lucknow.
@@ -155,13 +154,6 @@ export default function Footer() {
                   {SITE_CONFIG.address}
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-white/75 text-sm">
-                <Clock className="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" />
-                <div>
-                  <p>Mon–Sat: 7:00 AM – 9:00 PM</p>
-                  <p>Sunday: 8:00 AM – 2:00 PM</p>
-                </div>
-              </li>
             </ul>
           </div>
         </div>
@@ -170,7 +162,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="container-custom py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/60">
-          <p>© {new Date().getFullYear()} {SITE_CONFIG.shortName}. All rights reserved.</p>
+          <p>© 2026 Authorized Patient Service Centre, Khargapur, Lucknow. All rights reserved.</p>
           <p>Authorized Patient Service Centre, Lucknow</p>
         </div>
       </div>

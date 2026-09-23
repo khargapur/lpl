@@ -10,12 +10,13 @@ import {
   Home,
   Building2,
 } from "lucide-react";
-import { AREAS } from "@/data/areas";
 
 const BASE_URL = "https://www.bloodtestinlucknow.com";
 const PAGE_URL = `${BASE_URL}/areas/khargapur`;
 const PHONE_DISPLAY = "+91 9451155402";
 const PHONE_HREF = "tel:+919451155402";
+const ADDRESS_EN =
+  "In front of Sanskar Vatika, Awadhpuri-2, Khargapur, Gomti Nagar, Lucknow – 226010";
 const ADDRESS_HI =
   "संस्कार वाटिका के सामने, अवधपुरी-2, खरगापुर, गोमती नगर, लखनऊ – 226010";
 
@@ -28,53 +29,60 @@ export const KHARGAPUR_SEO = {
 /* FAQs: aText = plain text for schema (no raw URLs), aJsx = visible answer (may contain links) */
 export const KHARGAPUR_FAQS: { q: string; aText: string; aJsx: React.ReactNode }[] = [
   {
-    q: "Is there a blood test centre in Khargapur?",
-    aText:
-      "Yes. The Dr Lal PathLabs Patient Service Centre (franchise code CC14735) is a physical, operating centre in Khargapur — not a temporary camp or a collection point open on select days. You can visit the Patient Service Centre for applicable sample collection and test-booking services.",
+    q: "Where is the Dr Lal PathLabs Patient Service Centre in Khargapur?",
+    aText: `Our Patient Service Centre is located at ${ADDRESS_EN}. You can call ${PHONE_DISPLAY} before visiting for current service availability.`,
     aJsx: (
       <>
-        Yes. The Dr Lal PathLabs Patient Service Centre (franchise code CC14735) is a physical,
-        operating centre in Khargapur — not a temporary camp or a collection point open on select
-        days. You can visit the Patient Service Centre for applicable sample collection and
-        test-booking services.
+        Our Patient Service Centre is located at {ADDRESS_EN}. You can call {PHONE_DISPLAY} before
+        visiting for current service availability.
       </>
     ),
   },
   {
-    q: "Where exactly is the Dr Lal PathLabs centre in Khargapur?",
-    aText: `The centre is at ${ADDRESS_HI} — opposite Sanskar Vatika in Awadhpuri-2, Khargapur. The phone number is ${PHONE_DISPLAY}.`,
+    q: "Do you provide home sample collection in Khargapur?",
+    aText:
+      "Home sample collection may be available in Khargapur and nearby areas, subject to availability and applicable terms.",
     aJsx: (
       <>
-        The centre is at {ADDRESS_HI} — opposite Sanskar Vatika in Awadhpuri-2, Khargapur. The
-        phone number is {PHONE_DISPLAY}.
+        Home sample collection may be available in Khargapur and nearby areas, subject to
+        availability and applicable terms.
       </>
     ),
   },
   {
-    q: "Is home blood sample collection available in Khargapur?",
+    q: "Which blood tests can I book?",
     aText:
-      "Home sample collection may be available for eligible tests and locations in the Khargapur area, subject to collection-slot availability. A member of the collection team visits your home or office, and samples are collected according to the applicable collection and transport procedures for the selected test.",
+      "A wide range of pathology tests and health packages can be booked through the Patient Service Centre. Availability may vary by test and collection requirements. The test catalogue is listed on the tests page of this website.",
     aJsx: (
       <>
-        Home sample collection may be available for eligible tests and locations in the Khargapur
-        area, subject to collection-slot availability. A member of the collection team visits your
-        home or office, and samples are collected according to the applicable collection and
-        transport procedures for the selected test.
+        A wide range of pathology tests and health packages can be booked through the Patient
+        Service Centre. Availability may vary by test and collection requirements. The test
+        catalogue is listed on the{" "}
+        <Link href="/tests" className="text-brand-blue underline">
+          tests page
+        </Link>{" "}
+        of this website.
       </>
     ),
   },
   {
-    q: "Which blood tests can I book from Khargapur?",
+    q: "How long do reports take?",
     aText:
-      "A wide range of tests can be booked through the Khargapur service — routine blood work such as CBC and blood sugar, HbA1c, lipid profile, liver and kidney function panels, thyroid tests, vitamin D and B12, iron studies, CRP and ESR, urine investigations, fever-related tests, and preventive health packages — subject to test availability and applicable sample-collection requirements. The catalogue with preparation information is on the tests page of this website.",
+      "Reporting time varies by test. The expected reporting time is provided according to the specific test or package booked.",
     aJsx: (
       <>
-        A wide range of tests can be booked through the Khargapur service — routine blood work such
-        as CBC and blood sugar, HbA1c, lipid profile, liver and kidney function panels, thyroid
-        tests, vitamin D and B12, iron studies, CRP and ESR, urine investigations, fever-related
-        tests, and preventive health packages — subject to test availability and applicable
-        sample-collection requirements. The catalogue with preparation information is on the{" "}
-        <Link href="/tests" className="text-brand-blue underline">tests page</Link>.
+        Reporting time varies by test. The expected reporting time is provided according to the
+        specific test or package booked.
+      </>
+    ),
+  },
+  {
+    q: "Can I visit the centre for sample collection?",
+    aText: `Yes. The Khargapur location is a Patient Service Centre. Current collection/service availability can be confirmed by calling ${PHONE_DISPLAY}.`,
+    aJsx: (
+      <>
+        Yes. The Khargapur location is a Patient Service Centre. Current collection/service
+        availability can be confirmed by calling {PHONE_DISPLAY}.
       </>
     ),
   },
@@ -84,43 +92,26 @@ export const KHARGAPUR_FAQS: { q: string; aText: string; aJsx: React.ReactNode }
       "It depends on the test. Some investigations require fasting and some do not. The preparation instructions are listed on each individual test page, and the booking team confirms them when you book. If you are unsure, ask your doctor.",
     aJsx: (
       <>
-        It depends on the test. Some investigations require fasting and some do not. The preparation
-        instructions are listed on each individual test page, and the booking team confirms them
-        when you book. If you are unsure, ask your doctor.
+        It depends on the test. Some investigations require fasting and some do not. The
+        preparation instructions are listed on each individual test page, and the booking team
+        confirms them when you book. If you are unsure, ask your doctor.
       </>
     ),
   },
   {
-    q: "Can elderly patients or people with limited mobility use home collection?",
+    q: "Do I need a doctor's prescription to book?",
     aText:
-      "Home sample collection can be convenient when travel is difficult — the collection team member comes to the home, so there is no travel involved. Availability depends on the test, location and slot, which the team confirms at booking.",
+      "Some tests require a prescription and some do not. The booking team will tell you at booking time if your selected test needs one. If you have a doctor's prescription, keep it ready when you call.",
     aJsx: (
       <>
-        Home sample collection can be convenient when travel is difficult — the collection team
-        member comes to the home, so there is no travel involved. Availability depends on the test,
-        location and slot, which the team confirms at booking.
+        Some tests require a prescription and some do not. The booking team will tell you at
+        booking time if your selected test needs one. If you have a doctor&apos;s prescription, keep
+        it ready when you call.
       </>
     ),
   },
   {
-    q: "Can I book a full-body health checkup from Khargapur?",
-    aText:
-      "Yes. Preventive health checkup packages — including the Swasthfit Super series and condition-focused packages for diabetes, women's health and cardiac care — can be booked through the Khargapur centre. Package availability and collection options depend on the selected package and current service availability. Each package page lists its included tests.",
-    aJsx: (
-      <>
-        Yes. Preventive{" "}
-        <Link href="/health-packages" className="text-brand-blue underline">
-          health checkup packages
-        </Link>{" "}
-        — including the Swasthfit Super series and condition-focused packages for diabetes,
-        women&apos;s health and cardiac care — can be booked through the Khargapur centre. Package
-        availability and collection options depend on the selected package and current service
-        availability. Each package page lists its included tests.
-      </>
-    ),
-  },
-  {
-    q: "How do I book a blood test?",
+    q: "How do I book a blood test in Khargapur?",
     aText: `Call or WhatsApp ${PHONE_DISPLAY}, or use the online booking page of this website. Keep your doctor's test list or the test names ready, along with your preferred date and slot.`,
     aJsx: (
       <>
@@ -134,28 +125,14 @@ export const KHARGAPUR_FAQS: { q: string; aText: string; aJsx: React.ReactNode }
     ),
   },
   {
-    q: "Do you serve nearby areas like Gomti Nagar Extension, Chinhat or Indira Nagar?",
+    q: "Which nearby areas may be served by home sample collection?",
     aText:
-      "Home sample collection may be available in nearby areas such as Gomti Nagar Extension, Chinhat and Indira Nagar, subject to test, location and collection-slot availability. The physical Patient Service Centre described on this page is in Khargapur, and you are welcome to visit it in person.",
+      "Home sample collection may be available in Khargapur and nearby parts of Gomti Nagar, subject to service availability. The physical Patient Service Centre described on this page is in Khargapur.",
     aJsx: (
       <>
-        Home sample collection may be available in nearby areas such as Gomti Nagar Extension,
-        Chinhat and Indira Nagar, subject to test, location and collection-slot availability. The
-        physical Patient Service Centre described on this page is in Khargapur, and you are welcome
-        to visit it in person.
-      </>
-    ),
-  },
-  {
-    q: "What should I check before going for a blood test?",
-    aText:
-      "Confirm which tests your doctor advised and carry the written list or prescription if you have one. Check the fasting or preparation instructions on the test page or with the booking team. Let the collection team know about any medication you take regularly. For home collection, keep your full address and a nearby landmark ready.",
-    aJsx: (
-      <>
-        Confirm which tests your doctor advised and carry the written list or prescription if you
-        have one. Check the fasting or preparation instructions on the test page or with the booking
-        team. Let the collection team know about any medication you take regularly. For home
-        collection, keep your full address and a nearby landmark ready.
+        Home sample collection may be available in Khargapur and nearby parts of Gomti Nagar,
+        subject to service availability. The physical Patient Service Centre described on this page
+        is in Khargapur.
       </>
     ),
   },
@@ -178,22 +155,16 @@ export function KhargapurJsonLd() {
     telephone: PHONE_DISPLAY,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "संस्कार वाटिका के सामने, अवधपुरी-2, खरगापुर, गोमती नगर",
+      streetAddress: "In front of Sanskar Vatika, Awadhpuri-2, Khargapur, Gomti Nagar",
       addressLocality: "Lucknow",
       addressRegion: "Uttar Pradesh",
       postalCode: "226010",
       addressCountry: "IN",
     },
-    areaServed: [
-      { "@type": "Place", name: "Khargapur, Lucknow" },
-      { "@type": "Place", name: "Gomti Nagar, Lucknow" },
-      { "@type": "Place", name: "Gomti Nagar Extension, Lucknow" },
-      { "@type": "Place", name: "Chinhat, Lucknow" },
-      { "@type": "Place", name: "Indira Nagar, Lucknow" },
-    ],
+    areaServed: { "@type": "Place", name: "Khargapur, Lucknow" },
     medicalSpecialty: "Pathology",
     description:
-      "Dr Lal PathLabs Patient Service Centre in Khargapur, Gomti Nagar, Lucknow. Blood tests and diagnostic testing with in-centre sample collection and home sample collection. Call +91 9451155402.",
+      "Dr Lal PathLabs Patient Service Centre in Khargapur, Gomti Nagar, Lucknow (franchise code CC14735). Sample collection and test-booking services; home sample collection may be available in Khargapur and nearby areas, subject to availability. Call +91 9451155402.",
   };
   const webpage = {
     "@context": "https://schema.org",
@@ -245,85 +216,21 @@ function Section({
   );
 }
 
-const TEST_CATEGORIES: { name: string; desc: string; href: string; linkText?: string }[] = [
-  {
-    name: "Complete Blood Count (CBC)",
-    desc: "measures red blood cells, white blood cells, haemoglobin and platelets. A common part of routine health evaluations.",
-    href: "/tests/complete-blood-count-cbc",
-    linkText: "CBC test details",
-  },
-  {
-    name: "HbA1c (Glycosylated Haemoglobin)",
-    desc: "reflects average blood sugar levels over roughly the past two to three months and is widely used in diabetes monitoring.",
-    href: "/tests/hba1c-glycosylated-hemoglobin",
-    linkText: "HbA1c test details",
-  },
-  {
-    name: "Blood sugar / glucose tests",
-    desc: "fasting and post-meal glucose measurements, booked individually or as part of diabetes panels.",
-    href: "/tests",
-  },
-  {
-    name: "Lipid profile",
-    desc: "measures cholesterol fractions and triglycerides; typically needs fasting, as stated on the test page.",
-    href: "/tests",
-  },
-  {
-    name: "Liver function test (LFT)",
-    desc: "a panel of markers related to liver health.",
-    href: "/tests",
-  },
-  {
-    name: "Kidney function test (KFT)",
-    desc: "markers such as creatinine and urea used to assess kidney function.",
-    href: "/tests",
-  },
-  {
-    name: "Thyroid tests (T3, T4, TSH)",
-    desc: "individual and combined thyroid-function measurements.",
-    href: "/tests",
-  },
-  {
-    name: "Vitamin D (25-OH)",
-    desc: "measures vitamin D status.",
-    href: "/tests",
-  },
-  {
-    name: "Vitamin B12",
-    desc: "measures B12 levels, often checked alongside anaemia workups.",
-    href: "/tests",
-  },
-  {
-    name: "Ferritin and iron studies",
-    desc: "assess iron stores and related markers.",
-    href: "/tests/ferritin",
-    linkText: "Ferritin test details",
-  },
-  {
-    name: "CRP and ESR",
-    desc: "inflammation-related markers frequently included in general health evaluations.",
-    href: "/tests/c-reactive-protein-cardio-hscrp",
-    linkText: "CRP test details",
-  },
-  {
-    name: "Urine routine and microscopy",
-    desc: "a standard urine investigation.",
-    href: "/tests",
-  },
-  {
-    name: "Fever-related tests",
-    desc: "dengue, typhoid, malaria and related investigations, also available as a combined panel.",
-    href: "/health-packages/fever-panel",
-    linkText: "fever panel",
-  },
-  {
-    name: "Other diagnostic investigations",
-    desc: "hormone assays, allergy panels, tumour markers and specialised tests are all bookable through the centre.",
-    href: "/tests",
-  },
+/* All hrefs verified to exist in the codebase (lib/constants.ts / data). No prices shown. */
+const POPULAR_TESTS: { name: string; href: string }[] = [
+  { name: "Complete Blood Count (CBC)", href: "/tests/complete-blood-count-cbc" },
+  { name: "Fasting Blood Sugar", href: "/tests/glucose-fasting-f" },
+  { name: "HbA1c", href: "/tests/hba1c-glycosylated-hemoglobin" },
+  { name: "Lipid Profile", href: "/tests/lipid-profile-complete" },
+  { name: "Thyroid Profile", href: "/tests/thyroid-profile-total" },
+  { name: "Liver Function Test (LFT)", href: "/tests/liver-panel-1-lft" },
+  { name: "Kidney Function Test (KFT)", href: "/tests/kidney-panel-kft" },
+  { name: "Vitamin D", href: "/tests/vitamin-d-25-hydroxy" },
+  { name: "Vitamin B12", href: "/tests/vitamin-b12-cyanocobala-min" },
+  { name: "Urine Routine Examination", href: "/tests/urine-examination-routine-urine-r-e" },
 ];
 
-const PACKAGES = [
+const PACKAGES: { name: string; href: string }[] = [
   { name: "Super 1", href: "/health-packages/super-1" },
   { name: "Super 2", href: "/health-packages/super-2" },
   { name: "Super 3", href: "/health-packages/super-3" },
@@ -333,15 +240,19 @@ const PACKAGES = [
   { name: "Cardiac care package", href: "/health-packages/cardiac-care-package" },
 ];
 
-const NEARBY_AREAS = [
+const NEARBY_AREAS: { name: string; href: string }[] = [
   { name: "Gomti Nagar", href: "/areas/gomti-nagar" },
   { name: "Gomti Nagar Extension", href: "/areas/gomti-nagar-extension" },
-  { name: "Indira Nagar", href: "/areas/indira-nagar" },
   { name: "Chinhat", href: "/areas/chinhat" },
+  { name: "Indira Nagar", href: "/areas/indira-nagar" },
+  { name: "Aliganj", href: "/areas/aliganj" },
+  { name: "Jankipuram", href: "/areas/jankipuram" },
+  { name: "Alambagh", href: "/areas/alambagh" },
+  { name: "Aashiana", href: "/areas/aashiana" },
+  { name: "Hazratganj", href: "/areas/hazratganj" },
 ];
 
 export function KhargapurPage() {
-  const otherAreas = AREAS.filter((a) => a.slug !== "khargapur").slice(0, 6);
   return (
     <>
       <Navbar />
@@ -363,13 +274,13 @@ export function KhargapurPage() {
                   Blood Test &amp; Home Sample Collection in Khargapur, Lucknow
                 </h1>
                 <p className="text-white/85 text-lg">
-                  The Dr Lal PathLabs Patient Service Centre (franchise code CC14735) is located
-                  right here in Khargapur — visit for sample collection and test bookings, or
-                  request home sample collection, subject to availability.
+                  Our Khargapur Patient Service Centre provides sample collection and
+                  test-booking services. Home sample collection may also be available in Khargapur
+                  and nearby areas, subject to availability and applicable terms.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <ButtonLink href="/book-test" primary>
-                    Book Test in Khargapur <ChevronRight className="w-4 h-4 ml-1" />
+                    Book a Blood Test in Khargapur <ChevronRight className="w-4 h-4 ml-1" />
                   </ButtonLink>
                   <ButtonLink href={PHONE_HREF} primary={false}>
                     <Phone className="w-4 h-4 mr-2" /> {PHONE_DISPLAY}
@@ -383,6 +294,7 @@ export function KhargapurPage() {
                 <p className="text-sm text-white/85 leading-relaxed mb-1">
                   Dr Lal PathLabs Patient Service Centre – Khargapur
                 </p>
+                <p className="text-sm text-white/85 leading-relaxed mb-1">{ADDRESS_EN}</p>
                 <p className="text-sm text-white/85 leading-relaxed mb-4">{ADDRESS_HI}</p>
                 <a
                   href={PHONE_HREF}
@@ -395,85 +307,55 @@ export function KhargapurPage() {
           </div>
         </section>
 
-        <Section title="A physical diagnostic centre in Khargapur">
+        <Section title="Where is the Khargapur Patient Service Centre?">
           <p>
-            Khargapur is a residential sublocality of Gomti Nagar in east Lucknow, made up of
-            plotted colonies and newer housing pockets such as Awadhpuri-2. For residents here,
-            getting a blood test has usually meant travelling to the main Gomti Nagar market or
-            further into the city. That is no longer necessary.
+            The Dr Lal PathLabs Patient Service Centre serving Khargapur is located at{" "}
+            {ADDRESS_EN} (franchise code CC14735). If you are travelling to the centre, the
+            Sanskar Vatika landmark in Awadhpuri-2 is the easiest reference point to share with
+            your driver.
           </p>
           <p>
-            The Dr Lal PathLabs Patient Service Centre (franchise code CC14735) is a physical
-            diagnostic centre located in Khargapur itself. You can visit the Patient Service Centre
-            for applicable sample collection and test-booking services, and discuss health checkup
-            packages in person. Home sample collection may also be available for eligible tests and
-            locations, subject to collection-slot availability.
-          </p>
-          <p>
-            This page covers everything specific to Khargapur: where the centre is, which tests you
-            can book, how home collection works here, and how residents of nearby Gomti Nagar
-            pockets can use the service.
+            Residents of Khargapur can visit the centre for sample collection and test bookings,
+            or enquire about{" "}
+            <Link href="/home-collection" className="text-brand-blue underline">
+              home sample collection
+            </Link>
+            , subject to availability. For current service availability, call{" "}
+            <a href={PHONE_HREF} className="text-brand-blue underline">{PHONE_DISPLAY}</a> before
+            visiting.
           </p>
         </Section>
 
-        <Section title="Blood tests and diagnostic tests available in Khargapur" gray>
+        <Section title="Services at the Khargapur Patient Service Centre" gray>
           <p>
-            A wide range of pathology and diagnostic tests can be booked through the Khargapur
-            service, subject to test availability and applicable sample-collection requirements.
-            This includes routine blood work, diabetes and thyroid monitoring, lipid and
-            organ-function panels, vitamin and iron studies, infection and fever tests, urine
-            investigations, and preventive health packages. The catalogue is listed on the{" "}
-            <Link href="/tests" className="text-brand-blue underline">tests page</Link>, and
-            individual test pages include preparation information where applicable, so you can check
-            in advance whether fasting or any other preparation applies.
+            The Khargapur centre provides sample collection and test-booking services. At the
+            centre you can:
           </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>give a sample for a booked test at the centre, where applicable;</li>
+            <li>book blood tests and health checkup packages in person;</li>
+            <li>ask the team about test preparation before your visit;</li>
+            <li>
+              enquire about{" "}
+              <Link href="/home-collection" className="text-brand-blue underline">
+                home sample collection
+              </Link>{" "}
+              for eligible tests and locations.
+            </li>
+          </ul>
           <p>
-            For tests with specific preparation or collection requirements, check the individual test
-            instructions and confirm availability and the appropriate collection slot when booking.
-            If your doctor has advised a specific set of investigations, the centre team can help you
-            book exactly what was written — nothing more.
-          </p>
-        </Section>
-
-        <Section title="Home sample collection in Khargapur">
-          <p>
-            Home sample collection may be available for eligible tests and locations in the Khargapur
-            area, subject to collection-slot availability. When you book, you choose a date and time
-            slot, and a collection-team member arrives at your home or office with sealed, single-use
-            collection materials. Samples are collected according to the applicable collection and
-            transport procedures for the selected test.
-          </p>
-          <p>
-            This option can be convenient for elderly residents, working professionals who cannot step
-            out in the morning, parents booking tests for children, and families who want several
-            members tested in one visit. Booking is done the same way as a centre visit —{" "}
-            <Link href="/book-test" className="text-brand-blue underline">
-              call, WhatsApp or book online
-            </Link>{" "}
-            — and you mention your Khargapur address so the team can confirm slot availability for
-            your area.
+            Service availability can vary by day and by test, so calling{" "}
+            <a href={PHONE_HREF} className="text-brand-blue underline">{PHONE_DISPLAY}</a> before
+            visiting is recommended.
           </p>
         </Section>
 
-        <Section title="The Dr Lal PathLabs Patient Service Centre in Khargapur" gray>
-          <p>
-            This is an actual, operating Patient Service Centre — not a camp, not a collection point
-            run on select days. It carries the Dr Lal PathLabs franchise code CC14735 and serves as
-            the service point for Khargapur and the surrounding Gomti Nagar pockets. You can visit
-            for sample collection, to book health checkup packages, or to ask practical questions
-            about test preparation and booking.
-          </p>
-          <p>
-            For this local service page, the physical Patient Service Centre is located in Khargapur.
-            Nearby areas may be served through home sample collection, subject to availability.
-          </p>
-        </Section>
-
-        <Section title="Centre address and location">
+        <Section title="Visit Our Khargapur Patient Service Centre">
           <div className="bg-light-bg border border-gray-100 rounded-xl p-6 not-prose">
             <p className="font-semibold text-gray-900 mb-1">
-              Dr Lal PathLabs Patient Service Centre – Khargapur
+              Dr Lal PathLabs Patient Service Centre
             </p>
+            <p className="text-gray-700 mb-1">{ADDRESS_EN}</p>
             <p className="text-gray-700 mb-3">{ADDRESS_HI}</p>
             <p className="text-gray-700">
               <span className="font-medium">Phone:</span>{" "}
@@ -483,85 +365,104 @@ export function KhargapurPage() {
             </p>
           </div>
           <p>
-            The centre is in Awadhpuri-2, Khargapur, opposite Sanskar Vatika. Khargapur falls under
-            PIN 226010 and is a sublocality of Gomti Nagar, connected to the wider city through
-            Shaheed Path and the developing sectors of Gomti Nagar Extension. Nearby pockets —
-            Vineet Khand, the Sector 5 and 6 areas, Saraswati Puram, Chinhat and Malhaur — are within
-            the broader local service area; home sample collection may be available subject to
-            location and slot availability.
-          </p>
-          <p>
-            If you are visiting in person, calling{" "}
-            <a href={PHONE_HREF} className="text-brand-blue underline">{PHONE_DISPLAY}</a> before
-            you leave is a good idea — the team can confirm the day&apos;s sample-collection timings
-            and whether your test needs any preparation.
+            If you are visiting in person, carry your doctor&apos;s written test list or
+            prescription if you have one. The Khargapur location is a Patient Service Centre — a
+            sample collection and test-booking service point. For directions or other queries, you
+            can also reach us through the{" "}
+            <Link href="/contact" className="text-brand-blue underline">
+              contact page
+            </Link>
+            .
           </p>
         </Section>
 
-        <Section title="Popular test categories" gray>
-          <ul className="space-y-4">
-            {TEST_CATEGORIES.map((t) => (
-              <li key={t.name} className="flex items-start gap-3">
-                <span className="w-9 h-9 rounded-xl bg-brand-blue/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <FlaskConical className="w-4 h-4 text-brand-blue" />
-                </span>
-                <p className="text-gray-600">
-                  <strong className="text-gray-900">{t.name}</strong> — {t.desc}{" "}
-                  {t.linkText ? (
-                    <Link href={t.href} className="text-brand-blue underline">{t.linkText}</Link>
-                  ) : (
-                    <Link href={t.href} className="text-brand-blue underline">See the tests page</Link>
-                  )}
-                </p>
+        <Section title="Home Sample Collection in Khargapur" gray>
+          <p>
+            Home sample collection is available in Khargapur and selected nearby areas, subject to
+            availability. A trained phlebotomy professional collects the sample at the scheduled
+            location according to applicable sample-collection procedures.
+          </p>
+          <p>
+            To request home collection, call or WhatsApp {PHONE_DISPLAY} or use the{" "}
+            <Link href="/book-test" className="text-brand-blue underline">
+              online booking page
+            </Link>
+            . Share your complete address in Khargapur along with your test list, so the team can
+            confirm whether your location and tests are eligible.
+          </p>
+        </Section>
+
+        <Section title="Popular Blood Tests">
+          <p>
+            The tests below can be booked through the Khargapur Patient Service Centre. Each test
+            page includes preparation information where applicable, and current prices are listed
+            on the individual test pages. Availability may vary by test and collection
+            requirements.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-2.5">
+            {POPULAR_TESTS.map((t) => (
+              <li key={t.href}>
+                <Link
+                  href={t.href}
+                  className="flex items-center gap-2.5 bg-white border border-gray-100 rounded-xl px-4 py-3 text-brand-blue hover:border-brand-blue transition-colors"
+                >
+                  <FlaskConical className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm font-medium">{t.name}</span>
+                </Link>
               </li>
             ))}
           </ul>
+          <p>
+            Looking for something else? Browse the full{" "}
+            <Link href="/tests" className="text-brand-blue underline">
+              blood tests
+            </Link>{" "}
+            catalogue.
+          </p>
         </Section>
 
-        <Section title="Health checkup packages for Khargapur residents">
+        <Section title="Health Checkup Packages" gray>
           <p>
-            Alongside individual tests, the centre offers preventive{" "}
-            <Link href="/health-packages" className="text-brand-blue underline">
-              health checkup packages
-            </Link>{" "}
-            designed around common screening needs. The Swasthfit Super series (
+            Health packages available on the website include the{" "}
             {PACKAGES.slice(0, 4).map((p, i) => (
               <span key={p.href}>
-                <Link href={p.href} className="text-brand-blue underline">{p.name}</Link>
+                <Link href={p.href} className="text-brand-blue underline">
+                  {p.name}
+                </Link>
                 {i < 3 ? ", " : ""}
               </span>
-            ))}
-            ) covers broad multi-parameter screening. Condition-focused options include the{" "}
+            ))}{" "}
+            screening packages, as well as condition-focused options such as the{" "}
             <Link href="/health-packages/diabetes-care-package" className="text-brand-blue underline">
               diabetes care package
             </Link>
             , the{" "}
             <Link href="/health-packages/womens-health-package" className="text-brand-blue underline">
               women&apos;s health package
-            </Link>
-            , and the{" "}
+            </Link>{" "}
+            and the{" "}
             <Link href="/health-packages/cardiac-care-package" className="text-brand-blue underline">
               cardiac care package
             </Link>
-            .
+            . Each{" "}
+            <Link href="/health-packages" className="text-brand-blue underline">
+              health package
+            </Link>{" "}
+            page lists its included tests and current price.
           </p>
           <p>
-            Each package page lists exactly which tests are included, so you can compare inclusions
-            before choosing. Packages can be booked at the Khargapur centre in person. Home sample
-            collection may also be available for eligible packages. Package availability and
-            collection options depend on the selected package and current service availability. For
-            current pricing, see the individual package pages — prices are not repeated here because
-            they are updated on those pages.
+            Packages can be booked through the Khargapur centre. Home sample collection may be
+            available for eligible packages, subject to availability.
           </p>
         </Section>
 
-        <Section title="Khargapur and nearby areas served" gray>
+        <Section title="Home Sample Collection in Nearby Areas">
           <p>
             The physical Patient Service Centre described on this page is in Khargapur. Home sample
-            collection may be available in the nearby Gomti Nagar pockets, subject to test, location
-            and slot availability:
+            collection may be available in the following nearby areas, subject to service
+            availability:
           </p>
-          <ul className="grid sm:grid-cols-2 gap-2.5">
+          <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-2.5">
             {NEARBY_AREAS.map((a) => (
               <li key={a.href}>
                 <Link
@@ -572,31 +473,26 @@ export function KhargapurPage() {
                 </Link>
               </li>
             ))}
-            <li className="flex items-center gap-2 text-gray-600">
-              <MapPin className="w-4 h-4 flex-shrink-0" /> Malhaur and the Vineet Khand side of Gomti Nagar
-            </li>
           </ul>
           <p>
-            For this local service page, the physical Patient Service Centre is located in Khargapur.
-            If you live in a nearby pocket and prefer to visit in person, you are welcome at the
-            Khargapur centre; home sample collection may be available subject to location and slot
-            availability.
+            These area pages describe home sample collection options — only Khargapur is described
+            on this page as a physical Patient Service Centre.
           </p>
         </Section>
 
-        <Section title="When is a blood test usually advised?">
+        <Section title="When is a blood test usually advised?" gray>
           <p>
-            In general, people book blood tests when a doctor recommends them — for a routine annual
-            check-up, to follow up on an existing condition, to monitor the effect of prescribed
-            medication, or to meet a requirement such as a pre-employment medical or an insurance
-            health check. Some people also book preventive packages on their own initiative to get a
-            baseline picture of their health.
+            In general, people book blood tests when a doctor recommends them — for a routine
+            annual check-up, to follow up on an existing condition, to monitor the effect of
+            prescribed medication, or to meet a requirement such as a pre-employment medical or an
+            insurance health check. Some people also book preventive packages on their own
+            initiative to get a baseline picture of their health.
           </p>
           <p>
             What this page will not do is tell you which tests you personally need. If you have
-            symptoms or a health concern, speak to your doctor first and get a written test list. Once
-            you have it, the Khargapur centre team can help you book exactly those investigations —
-            by phone, on WhatsApp, or through the{" "}
+            symptoms or a health concern, speak to your doctor first and get a written test list.
+            Once you have it, the Khargapur centre team can help you book exactly those
+            investigations — by phone, on WhatsApp, or through the{" "}
             <Link href="/book-test" className="text-brand-blue underline">
               online booking page
             </Link>
@@ -604,7 +500,7 @@ export function KhargapurPage() {
           </p>
         </Section>
 
-        <Section title="How to book a test in Khargapur" gray>
+        <Section title="How to Book a Blood Test in Khargapur">
           <p>Booking takes a couple of minutes:</p>
           <ol className="space-y-3 list-none">
             <li className="flex items-start gap-3">
@@ -623,38 +519,38 @@ export function KhargapurPage() {
             </li>
           </ol>
           <p>
-            Keep ready: the names of the tests (or your doctor&apos;s note), your preferred date and
-            time slot, and — for home collection — your complete Khargapur address with a nearby
-            landmark. If any of your tests need fasting, the team confirms this at the time of
-            booking, and the preparation is also listed on each test page.
+            Keep ready: the names of the tests (or your doctor&apos;s note), your preferred date
+            and time slot, and — for home collection — your complete Khargapur address. If any of
+            your tests need fasting, the team confirms this at the time of booking, and the
+            preparation is also listed on each test page.
           </p>
         </Section>
 
-        <Section title="Visiting the centre vs home sample collection">
+        <Section title="Visiting the centre vs home sample collection" gray>
           <div className="grid md:grid-cols-2 gap-5">
-            <div className="bg-light-bg border border-gray-100 rounded-xl p-6">
+            <div className="bg-white border border-gray-100 rounded-xl p-6">
               <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-brand-blue" /> Visit the centre
               </h3>
               <p className="text-sm">
-                If you live close by, prefer an in-person visit, are booking a package and want to
-                discuss the inclusions in person, or like the routine of visiting the centre yourself.
+                If you live close by, prefer an in-person visit, or are booking a package and want
+                to discuss the inclusions in person.
               </p>
             </div>
-            <div className="bg-light-bg border border-gray-100 rounded-xl p-6">
+            <div className="bg-white border border-gray-100 rounded-xl p-6">
               <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                 <Home className="w-5 h-5 text-brand-blue" /> Home sample collection
               </h3>
               <p className="text-sm">
-                If mornings are difficult, an elderly family member needs testing, you are booking for
-                several family members at once, or mobility is a concern. Samples are collected
-                according to the applicable collection and transport procedures for the selected test.
+                If mornings are difficult, an elderly family member needs testing, you are booking
+                for several family members at once, or mobility is a concern. Availability is
+                subject to test, location and slot.
               </p>
             </div>
           </div>
           <p>
-            Both options are booked through the same number — {PHONE_DISPLAY} — and both are subject
-            to slot availability on the day you choose.
+            Both options are booked through the same number — {PHONE_DISPLAY} — and both are
+            subject to availability.
           </p>
         </Section>
 
@@ -675,49 +571,26 @@ export function KhargapurPage() {
           </div>
         </section>
 
-        {/* Other areas */}
-        <section className="py-10 bg-light-bg border-t border-gray-100">
-          <div className="container-custom">
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4 text-center">
-              We also serve
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2.5">
-              {otherAreas.map((a) => (
-                <Link
-                  key={a.slug}
-                  href={`/areas/${a.slug}`}
-                  className="text-sm bg-white border border-gray-200 rounded-full px-4 py-2 text-brand-blue hover:border-brand-blue transition-colors"
-                >
-                  Blood Test in {a.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Final CTA */}
         <section className="bg-brand-blue text-white py-12 md:py-16">
           <div className="container-custom max-w-3xl text-center space-y-5">
             <ClipboardList className="w-10 h-10 mx-auto text-brand-yellow" />
             <h2 className="text-2xl md:text-3xl font-bold font-heading">
-              Need a blood test in Khargapur?
+              Book a Blood Test in Khargapur
             </h2>
             <p className="text-white/85 leading-relaxed">
-              Visit the Dr Lal PathLabs Patient Service Centre at {ADDRESS_HI}, or request home
-              sample collection, subject to availability. Either way, booking starts with one step —
-              call or WhatsApp{" "}
+              Book a blood test online or contact our Khargapur Patient Service Centre for test
+              availability and home sample collection options.
+            </p>
+            <p className="text-white/85">
+              Phone:{" "}
               <a href={PHONE_HREF} className="font-bold text-brand-yellow hover:underline">
                 {PHONE_DISPLAY}
               </a>
-              , or{" "}
-              <Link href="/book-test" className="font-semibold underline hover:text-brand-yellow">
-                book your test online
-              </Link>
-              .
             </p>
             <div className="flex flex-wrap justify-center gap-3 pt-2">
               <ButtonLink href="/book-test" primary>
-                Book Your Test <ChevronRight className="w-4 h-4 ml-1" />
+                Book a Blood Test in Khargapur <ChevronRight className="w-4 h-4 ml-1" />
               </ButtonLink>
               <ButtonLink href={PHONE_HREF} primary={false}>
                 <Phone className="w-4 h-4 mr-2" /> {PHONE_DISPLAY}
