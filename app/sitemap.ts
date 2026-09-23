@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { HEALTH_PACKAGES } from "@/lib/constants";
+import { AREAS } from "@/data/areas";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 const BASE_URL = "https://www.bloodtestinlucknow.com";
@@ -67,5 +68,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...testRoutes, ...packageRoutes, ...blogRoutes];
+  const areaRoutes = AREAS.map((area) => ({
+    url: `${BASE_URL}/areas/${area.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+  }));
+
+  return [...staticRoutes, ...areaRoutes, ...testRoutes, ...packageRoutes, ...blogRoutes];
 }

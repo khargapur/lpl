@@ -19,12 +19,25 @@ const aboutLinks = [
   { href: "/terms", label: "Terms & Conditions" },
 ];
 
+const areaLinks = [
+  { href: "/areas/khargapur", label: "Blood Test in Khargapur" },
+  { href: "/areas/gomti-nagar", label: "Blood Test in Gomti Nagar" },
+  { href: "/areas/gomti-nagar-extension", label: "Blood Test in Gomti Nagar Ext." },
+  { href: "/areas/hazratganj", label: "Blood Test in Hazratganj" },
+  { href: "/areas/indira-nagar", label: "Blood Test in Indira Nagar" },
+  { href: "/areas/aliganj", label: "Blood Test in Aliganj" },
+  { href: "/areas/jankipuram", label: "Blood Test in Jankipuram" },
+  { href: "/areas/alambagh", label: "Blood Test in Alambagh" },
+  { href: "/areas/aashiana", label: "Blood Test in Aashiana" },
+  { href: "/areas/chinhat", label: "Blood Test in Chinhat" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-brand-blue text-white">
       {/* Main footer */}
       <div className="container-custom py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
 
           {/* Brand column */}
           <div className="space-y-5">
@@ -85,6 +98,25 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {aboutLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/75 hover:text-white text-sm transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Areas We Serve */}
+          <div>
+            <h4 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
+              Areas We Serve
+            </h4>
+            <ul className="space-y-2.5">
+              {areaLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
