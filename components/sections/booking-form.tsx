@@ -191,10 +191,30 @@ export default function BookingForm({ preselectedTest, preselectedPackage }: Boo
     );
   }
 
-  async function onSubmit(data: FormValues) {
+    function onSubmit(data: FormValues) {
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    console.log("Booking submitted:", data);
+    const lines = [
+      "New Booking Request - bloodtestinlucknow.com",
+      "",
+      `Name: ${data.name}`,
+      `Phone: ${data.phone}`,
+      `Email: ${data.email}`,
+      `Test / Package: ${selectedTestLabel || data.testType}`,
+      `Collection: ${data.collectionType === "home" ? "Home Collection" : "Visit Centre"}`,
+      `Preferred Date: ${data.date}`,
+      `Time Slot: ${data.timeSlot}`,
+    ];
+    if (data.collectionType === "home") {
+      if (data.address) lines.push(`Address: ${data.address}`);
+      if (data.gpsCoords) lines.push(`Location (GPS): ${data.gpsCoords}`);
+    }
+    if (data.comments) lines.push(`Comments: ${data.comments}`);
+    const waNumber = SITE_CONFIG.whatsapp.replace(/\D/g, "");
+    window.open(
+      `https://wa.me/${waNumber}?text=${encodeURIComponent(lines.join("\n"))}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
     setIsSubmitting(false);
     setIsSubmitted(true);
   }
@@ -207,7 +227,7 @@ export default function BookingForm({ preselectedTest, preselectedPackage }: Boo
         </div>
         <h3 className="text-xl font-bold text-brand-blue mb-2 font-heading">Booking Request Received!</h3>
         <p className="text-gray-500 text-sm mb-6">
-          Our team will call you shortly to confirm your appointment. You will receive a confirmation on WhatsApp.
+          Your booking details have been opened in WhatsApp — please tap Send there to complete your request. Our team will call you shortly to confirm your appointment.
         </p>
         <Button
           onClick={() => setIsSubmitted(false)}
@@ -358,7 +378,7 @@ export default function BookingForm({ preselectedTest, preselectedPackage }: Boo
                     >
                       <input type="radio" value={type} checked={field.value === type} onChange={() => { field.onChange(type); setGpsSet(false); setGpsError(""); }} className="sr-only" />
                       <p className="font-semibold text-sm text-gray-800">{type === "lab" ? "Visit Lab" : "Home Collection"}</p>
-                      <p className="text-xs text-gray-400 mt-0.5">{type === "lab" ? "Come to our centre" : "Free pickup at door"}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{type === "lab" ? "Come to our centre" : "At your address, subject to availability"}</p>
                     </label>
                   ))}
                 </div>
