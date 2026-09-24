@@ -4,12 +4,12 @@ import { Home, Phone, Clock, Shield, CheckCircle2, ChevronRight } from "lucide-r
 import { SITE_CONFIG } from "@/lib/constants";
 
 const FEATURES = [
-  "Free sample collection across Lucknow",
+  "Home sample collection across Lucknow, subject to availability",
   "Trained and experienced technicians",
   "Safe and hygienic sample collection",
   "On-time arrival at your doorstep",
   "Online payment options available",
-  "Same-day report delivery for most tests",
+  "Report delivery for most tests",
 ];
 
 export default function HomeCollectionSection() {

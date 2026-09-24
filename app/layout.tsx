@@ -97,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {
         "@type": ["MedicalOrganization", "MedicalBusiness", "MedicalClinic", "LocalBusiness"],
         "@id": `${BASE_URL}/#organization`,
-        name: SITE_CONFIG.name,
+        name: "Dr Lal PathLabs Patient Service Centre - Khargapur",
         alternateName: ["Dr Lal PathLabs Lucknow", "Dr Lal PathLabs Gomti Nagar", "Dr Lal PathLabs Khargapur"],
         description:
           "Authorized Patient Service Centre of Dr Lal PathLabs in Khargapur, Gomti Nagar, Lucknow. Blood tests, health checkup packages and diagnostic test booking services. Home sample collection may be available, subject to availability.",
@@ -112,7 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         telephone: SITE_CONFIG.phone,
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Khargapur, Gomti Nagar",
+          streetAddress: "In front of Sanskar Vatika, Awadhpuri-2, Khargapur, Gomti Nagar",
           addressLocality: "Lucknow",
           addressRegion: "Uttar Pradesh",
           postalCode: "226010",
@@ -122,6 +122,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         currenciesAccepted: "INR",
         areaServed: [
           { "@type": "City", name: "Lucknow" },
+          { "@type": "Place", name: "Gomti Nagar" },
+          { "@type": "Place", name: "Khargapur" },
           { "@type": "State", name: "Uttar Pradesh" },
         ],
         availableService: [
