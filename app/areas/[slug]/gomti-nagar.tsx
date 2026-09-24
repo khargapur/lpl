@@ -149,12 +149,13 @@ export const GOMTI_NAGAR_FAQS: { q: string; aText: string; aJsx: React.ReactNode
   {
     q: "I searched for \u201cblood test near me in Gomti Nagar\u201d — what is the nearest centre?",
     aText:
-      "The nearest physical centre is the Dr Lal PathLabs Patient Service Centre in Khargapur, Gomti Nagar (In front of Sanskar Vatika, Awadhpuri-2, Lucknow \u2013 226010). If visiting is inconvenient, free home sample collection brings the service to your doorstep anywhere in Gomti Nagar.",
+      "The nearest physical centre is the Dr Lal PathLabs Patient Service Centre in Khargapur, Gomti Nagar (In front of Sanskar Vatika, Awadhpuri-2, Lucknow \u2013 226010). If visiting is inconvenient, free home sample collection can bring the service to your doorstep in Gomti Nagar \u2014 the team confirms coverage for your exact location when you book.",
     aJsx: (
       <>
         The nearest physical centre is the Dr Lal PathLabs Patient Service Centre in Khargapur,
-        Gomti Nagar ({ADDRESS_EN}). If visiting is inconvenient, free home sample collection
-        brings the service to your doorstep anywhere in Gomti Nagar.
+        Gomti Nagar ({ADDRESS_EN}). If visiting is inconvenient, free home sample collection can
+        bring the service to your doorstep in Gomti Nagar — the team confirms coverage for your
+        exact location when you book.
       </>
     ),
   },
