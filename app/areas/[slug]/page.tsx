@@ -19,6 +19,7 @@ import {
 import { SITE_CONFIG } from "@/lib/constants";
 import { AREAS, AREA_SLUGS, getArea } from "@/data/areas";
 import { KhargapurPage, KhargapurJsonLd, KHARGAPUR_SEO } from "./khargapur";
+import { GomtiNagarPage, GomtiNagarJsonLd, GOMTI_NAGAR_SEO } from "./gomti-nagar";
 
 const BASE_URL = "https://www.bloodtestinlucknow.com";
 
@@ -43,6 +44,18 @@ export async function generateMetadata({
         title: KHARGAPUR_SEO.title,
         description: KHARGAPUR_SEO.description,
         url: `${BASE_URL}/areas/khargapur`,
+      },
+    };
+  }
+  if (slug === "gomti-nagar") {
+    return {
+      title: { absolute: GOMTI_NAGAR_SEO.title },
+      description: GOMTI_NAGAR_SEO.description,
+      alternates: { canonical: "/areas/gomti-nagar" },
+      openGraph: {
+        title: GOMTI_NAGAR_SEO.title,
+        description: GOMTI_NAGAR_SEO.description,
+        url: `${BASE_URL}/areas/gomti-nagar`,
       },
     };
   }
@@ -87,6 +100,14 @@ export default async function AreaPage({
       <>
         <KhargapurJsonLd />
         <KhargapurPage />
+      </>
+    );
+  }
+  if (slug === "gomti-nagar") {
+    return (
+      <>
+        <GomtiNagarJsonLd />
+        <GomtiNagarPage />
       </>
     );
   }
