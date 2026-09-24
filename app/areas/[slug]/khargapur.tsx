@@ -29,110 +29,116 @@ export const KHARGAPUR_SEO = {
 /* FAQs: aText = plain text for schema (no raw URLs), aJsx = visible answer (may contain links) */
 export const KHARGAPUR_FAQS: { q: string; aText: string; aJsx: React.ReactNode }[] = [
   {
-    q: "Where is the Dr Lal PathLabs Patient Service Centre in Khargapur?",
-    aText: `Our Patient Service Centre is located at ${ADDRESS_EN}. You can call ${PHONE_DISPLAY} before visiting for current service availability.`,
-    aJsx: (
-      <>
-        Our Patient Service Centre is located at {ADDRESS_EN}. You can call {PHONE_DISPLAY} before
-        visiting for current service availability.
-      </>
-    ),
-  },
-  {
-    q: "Do you provide home sample collection in Khargapur?",
+    q: "Is there a Dr Lal PathLabs centre in Khargapur, Gomti Nagar, Lucknow?",
     aText:
-      "Home sample collection may be available in Khargapur and nearby areas, subject to availability and applicable terms.",
+      "Yes. Dr Lal PathLabs Patient Service Centre is located in Khargapur, Gomti Nagar, Lucknow. The centre provides access to blood tests and other diagnostic testing services.",
     aJsx: (
       <>
-        Home sample collection may be available in Khargapur and nearby areas, subject to
-        availability and applicable terms.
+        Yes. Dr Lal PathLabs Patient Service Centre is located in Khargapur, Gomti Nagar, Lucknow.
+        The centre provides access to blood tests and other diagnostic testing services.
       </>
     ),
   },
   {
-    q: "Which blood tests can I book?",
+    q: "Where is the Dr Lal PathLabs centre in Khargapur located?",
     aText:
-      "A wide range of pathology tests and health packages can be booked through the Patient Service Centre. Availability may vary by test and collection requirements. The test catalogue is listed on the tests page of this website.",
+      "The centre is located in front of Sanskar Vatika, Awadhpuri-2, Khargapur, Gomti Nagar, Lucknow – 226010.",
     aJsx: (
       <>
-        A wide range of pathology tests and health packages can be booked through the Patient
-        Service Centre. Availability may vary by test and collection requirements. The test
-        catalogue is listed on the{" "}
-        <Link href="/tests" className="text-brand-blue underline">
-          tests page
-        </Link>{" "}
-        of this website.
+        The centre is located in front of Sanskar Vatika, Awadhpuri-2, Khargapur, Gomti Nagar,
+        Lucknow – 226010.
       </>
     ),
   },
   {
-    q: "How long do reports take?",
+    q: "Can I book a blood test in Khargapur?",
     aText:
-      "Reporting time varies by test. The expected reporting time is provided according to the specific test or package booked.",
+      "Yes. You can book available blood tests through the centre. Test availability, sample requirements and preparation instructions may vary depending on the investigation.",
     aJsx: (
       <>
-        Reporting time varies by test. The expected reporting time is provided according to the
-        specific test or package booked.
+        Yes. You can book available blood tests through the centre. Test availability, sample
+        requirements and preparation instructions may vary depending on the investigation.
       </>
     ),
   },
   {
-    q: "Can I visit the centre for sample collection?",
-    aText: `Yes. The Khargapur location is a Patient Service Centre. Current collection/service availability can be confirmed by calling ${PHONE_DISPLAY}.`,
-    aJsx: (
-      <>
-        Yes. The Khargapur location is a Patient Service Centre. Current collection/service
-        availability can be confirmed by calling {PHONE_DISPLAY}.
-      </>
-    ),
-  },
-  {
-    q: "Do I need to fast before a blood test?",
+    q: "Is home sample collection available in Khargapur?",
     aText:
-      "It depends on the test. Some investigations require fasting and some do not. The preparation instructions are listed on each individual test page, and the booking team confirms them when you book. If you are unsure, ask your doctor.",
+      "Home sample collection is available for eligible locations and tests. Availability and collection timings can depend on the location and booking.",
     aJsx: (
       <>
-        It depends on the test. Some investigations require fasting and some do not. The
-        preparation instructions are listed on each individual test page, and the booking team
-        confirms them when you book. If you are unsure, ask your doctor.
+        Home sample collection is available for eligible locations and tests. Availability and
+        collection timings can depend on the location and booking.
       </>
     ),
   },
   {
-    q: "Do I need a doctor's prescription to book?",
+    q: "Which blood tests and pathology services are available in Khargapur?",
     aText:
-      "Some tests require a prescription and some do not. The booking team will tell you at booking time if your selected test needs one. If you have a doctor's prescription, keep it ready when you call.",
+      "Commonly requested investigations may include CBC, HbA1c, lipid profile, liver function tests, kidney function tests, thyroid tests, vitamin tests and other diagnostic investigations. The Dr Lal PathLabs Patient Service Centre serves patients looking for blood tests and pathology services in Khargapur, Gomti Nagar. Test availability may vary by investigation and location.",
     aJsx: (
       <>
-        Some tests require a prescription and some do not. The booking team will tell you at
-        booking time if your selected test needs one. If you have a doctor&apos;s prescription, keep
-        it ready when you call.
+        Commonly requested investigations may include CBC, HbA1c, lipid profile, liver function
+        tests, kidney function tests, thyroid tests, vitamin tests and other diagnostic
+        investigations. The Dr Lal PathLabs Patient Service Centre serves patients looking for
+        blood tests and pathology services in Khargapur, Gomti Nagar. Test availability may vary
+        by investigation and location.
       </>
     ),
   },
   {
-    q: "How do I book a blood test in Khargapur?",
-    aText: `Call or WhatsApp ${PHONE_DISPLAY}, or use the online booking page of this website. Keep your doctor's test list or the test names ready, along with your preferred date and slot.`,
-    aJsx: (
-      <>
-        Call or WhatsApp <strong>{PHONE_DISPLAY}</strong>, or use the{" "}
-        <Link href="/book-test" className="text-brand-blue underline">
-          online booking page
-        </Link>
-        . Keep your doctor&apos;s test list or the test names ready, along with your preferred date
-        and slot.
-      </>
-    ),
-  },
-  {
-    q: "Which nearby areas may be served by home sample collection?",
+    q: "Can I get a health checkup package in Khargapur?",
     aText:
-      "Home sample collection may be available in Khargapur and nearby parts of Gomti Nagar, subject to service availability. The physical Patient Service Centre described on this page is in Khargapur.",
+      "Yes. Dr Lal PathLabs offers different health checkup packages and profiles. The appropriate package depends on the tests required and individual health needs.",
     aJsx: (
       <>
-        Home sample collection may be available in Khargapur and nearby parts of Gomti Nagar,
-        subject to service availability. The physical Patient Service Centre described on this page
-        is in Khargapur.
+        Yes. Dr Lal PathLabs offers different health checkup packages and profiles. The appropriate
+        package depends on the tests required and individual health needs.
+      </>
+    ),
+  },
+  {
+    q: "Do I need to visit the centre for every blood test?",
+    aText:
+      "Not necessarily. Eligible tests can be collected through home sample collection where available. Some investigations may have specific sample-collection requirements.",
+    aJsx: (
+      <>
+        Not necessarily. Eligible tests can be collected through home sample collection where
+        available. Some investigations may have specific sample-collection requirements.
+      </>
+    ),
+  },
+  {
+    q: "How should I prepare for a blood test?",
+    aText:
+      "Preparation depends on the test. Some tests require fasting while others do not. Follow the preparation instructions provided for the specific test or package before giving your sample.",
+    aJsx: (
+      <>
+        Preparation depends on the test. Some tests require fasting while others do not. Follow the
+        preparation instructions provided for the specific test or package before giving your
+        sample.
+      </>
+    ),
+  },
+  {
+    q: "Can I book a blood test for home collection in Gomti Nagar?",
+    aText:
+      "Yes, home collection may be available in eligible areas of Gomti Nagar, including Khargapur. Availability should be confirmed while booking.",
+    aJsx: (
+      <>
+        Yes, home collection may be available in eligible areas of Gomti Nagar, including
+        Khargapur. Availability should be confirmed while booking.
+      </>
+    ),
+  },
+  {
+    q: "How can I contact the Khargapur centre?",
+    aText:
+      "You can contact the Dr Lal PathLabs Patient Service Centre in Khargapur using the contact details provided on this page.",
+    aJsx: (
+      <>
+        You can contact the Dr Lal PathLabs Patient Service Centre in Khargapur using the contact
+        details provided on this page.
       </>
     ),
   },
