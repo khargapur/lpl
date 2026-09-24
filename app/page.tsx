@@ -4,21 +4,22 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/navbar";
 
 export const metadata: Metadata = {
-  title: "Dr. Lal PathLabs Khargapur, Gomti Nagar Lucknow | Blood Test & Health Checkup",
+  title: "Blood Test in Lucknow | Dr Lal PathLabs Khargapur",
   description:
-    "Book blood tests, CBC, sugar, HbA1c, fever panel & health checkup packages at Dr. Lal PathLabs in Khargapur, Gomti Nagar, Lucknow. Free home sample collection. Reports in 24 hrs via WhatsApp. Call +91 9451155402.",
+    "Book blood tests and health checkups in Lucknow at Dr Lal PathLabs Patient Service Centre, Khargapur, Gomti Nagar. Home sample collection may be available. Call +91 9451155402.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Dr. Lal PathLabs Khargapur, Gomti Nagar Lucknow | Blood Test & Health Checkup",
+    title: "Blood Test in Lucknow | Dr Lal PathLabs Khargapur",
     description:
-      "NABL accredited pathology lab in Khargapur, Gomti Nagar, Lucknow. CBC ₹210, Blood Sugar ₹50, Health Packages from ₹1250. Book now, free home collection!",
-    url: "https://www.bloodtestinlucknow.com",
+      "Book blood tests and health checkups in Lucknow at Dr Lal PathLabs Patient Service Centre, Khargapur, Gomti Nagar. Home sample collection may be available.",
+    url: "https://www.bloodtestinlucknow.com/",
     images: [{ url: "/images/maxresdefault.jpg", width: 1280, height: 720, alt: "Dr. Lal PathLabs Khargapur, Gomti Nagar Lucknow" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Lal PathLabs Lucknow | Blood Test & Health Checkup",
-    description: "NABL accredited lab in Gomti Nagar, Lucknow. Book CBC, sugar, thyroid & health packages. Free home collection.",
+    title: "Blood Test in Lucknow | Dr Lal PathLabs Khargapur",
+    description:
+      "Book blood tests and health checkups in Lucknow at Dr Lal PathLabs Patient Service Centre, Khargapur, Gomti Nagar. Home sample collection may be available.",
     images: ["/images/maxresdefault.jpg"],
   },
 };
@@ -55,7 +56,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <h1 className="sr-only">
-          Blood Test &amp; Health Checkup in Khargapur, Gomti Nagar, Lucknow – Dr Lal PathLabs
+          Blood Test in Lucknow
         </h1>
         <Hero />
 

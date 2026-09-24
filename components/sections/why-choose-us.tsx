@@ -16,7 +16,7 @@ const REASONS = [
   {
     icon: Home,
     title: "Home Collection",
-    description: "Free sample collection from your doorstep across Lucknow.",
+    description: "Home sample collection from your doorstep across Lucknow, subject to availability.",
   },
   {
     icon: Shield,
