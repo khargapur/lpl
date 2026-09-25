@@ -52,18 +52,25 @@ export default function Footer() {
               Authorized Patient Service Centre of Dr Lal PathLabs serving Khargapur and nearby
               areas of Lucknow.
             </p>
-            <p className="text-white/45 text-xs leading-relaxed border-t border-white/10 pt-3">
-              This is <span className="font-semibold text-white/60">not</span> the official website of Dr Lal PathLabs Ltd. This site belongs to an authorized Patient Service Centre franchise operating in Lucknow.
+            <p className="text-white/70 text-xs leading-relaxed border-t border-white/10 pt-3">
+              This is <span className="font-semibold">not</span> the official website of Dr Lal PathLabs Ltd. This site belongs to an authorized Patient Service Centre franchise operating in Lucknow.
             </p>
 
             <div className="flex gap-3">
-              {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
+              {[
+                { Icon: Facebook, label: "Facebook" },
+                { Icon: Twitter, label: "Twitter" },
+                { Icon: Instagram, label: "Instagram" },
+                { Icon: Linkedin, label: "LinkedIn" },
+                { Icon: Youtube, label: "YouTube" },
+              ].map(({ Icon, label }) => (
                 <a
-                  key={i}
+                  key={label}
                   href="#"
+                  aria-label={label}
                   className="w-9 h-9 rounded-full bg-white/10 hover:bg-brand-yellow hover:text-brand-blue flex items-center justify-center transition-colors"
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 h-4" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -71,9 +78,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
+            <h3 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
               Services
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -92,9 +99,9 @@ export default function Footer() {
 
           {/* About Links */}
           <div>
-            <h4 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
+            <h3 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
               Company
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
@@ -111,9 +118,9 @@ export default function Footer() {
 
           {/* Areas We Serve */}
           <div>
-            <h4 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
+            <h3 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
               Areas We Serve
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {areaLinks.map((link) => (
                 <li key={link.href}>
@@ -130,9 +137,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
+            <h3 className="font-semibold text-brand-yellow mb-4 uppercase tracking-wide text-sm">
               Contact Us
-            </h4>
+            </h3>
             <ul className="space-y-4">
               <li>
                 <a
@@ -161,7 +168,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="container-custom py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/60">
+        <div className="container-custom py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/75">
           <p>© 2026 Authorized Patient Service Centre, Khargapur, Lucknow. All rights reserved.</p>
           <p>Authorized Patient Service Centre, Lucknow</p>
         </div>

@@ -300,6 +300,7 @@ export default function BookingForm({ preselectedTest, preselectedPackage }: Boo
                       <button
                         type="button"
                         onClick={clearTest}
+                        aria-label="Clear selected test"
                         className="ml-2 text-gray-400 hover:text-gray-600 flex-shrink-0"
                       >
                         <X className="w-4 h-4" />

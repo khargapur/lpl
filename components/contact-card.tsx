@@ -29,7 +29,7 @@ export default function ContactCard({ type, title, value, href }: ContactCardPro
             <Icon className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-xs font-medium text-gray-400 uppercase tracking-wide">{title}</h4>
+            <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">{title}</h3>
             <p className={`text-gray-800 font-medium mt-0.5 text-sm ${href ? "group-hover:text-brand-blue transition-colors" : ""}`}>
               {value}
             </p>

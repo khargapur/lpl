@@ -119,10 +119,11 @@ function HeroSearch() {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={handleFocus}
           placeholder="Search Test and Packages"
+          aria-label="Search tests and packages"
           className="pr-12 h-11 border-gray-300 rounded text-sm"
           autoComplete="off"
         />
-        <button type="submit" className="absolute right-0 top-0 h-11 px-3 bg-brand-yellow rounded-r flex items-center justify-center">
+        <button type="submit" aria-label="Search tests and packages" className="absolute right-0 top-0 h-11 px-3 bg-brand-yellow rounded-r flex items-center justify-center">
           {loading ? <Loader2 className="w-4 h-4 text-brand-blue animate-spin" /> : <Search className="w-4 h-4 text-brand-blue" />}
         </button>
       </form>
@@ -130,12 +131,12 @@ function HeroSearch() {
       {open && (
         <div className="absolute z-50 top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-64 overflow-y-auto">
           {loading && results.length === 0 ? (
-            <div className="flex items-center justify-center py-5 text-gray-400">
+            <div className="flex items-center justify-center py-5 text-gray-500">
               <Loader2 className="w-4 h-4 animate-spin mr-2" />
               <span className="text-sm">Searching...</span>
             </div>
           ) : results.length === 0 ? (
-            <div className="py-5 text-center text-sm text-gray-400">No tests found</div>
+            <div className="py-5 text-center text-sm text-gray-500">No tests found</div>
           ) : (
             results.map((opt, i) => (
               <button
@@ -147,7 +148,7 @@ function HeroSearch() {
                 <FlaskConical className="w-3.5 h-3.5 text-gray-300 mt-0.5 flex-shrink-0" />
                 <div className="min-w-0">
                   <p className="text-sm text-gray-800 font-medium line-clamp-1">{opt.label}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">{opt.sublabel}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{opt.sublabel}</p>
                 </div>
               </button>
             ))
@@ -236,18 +237,23 @@ export default function Hero() {
             </button>
 
             {/* Dot indicators */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-1">
               {SLIDES.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
                   aria-label={`Go to slide ${i + 1}`}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    i === current
-                      ? "bg-white scale-110 shadow"
-                      : "bg-white/50 hover:bg-white/80"
-                  }`}
-                />
+                  className="p-2 rounded-full"
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`block w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      i === current
+                        ? "bg-white scale-110 shadow"
+                        : "bg-white/50 hover:bg-white/80"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </div>
