@@ -49,10 +49,11 @@ export default function BlogCard({ slug, title, excerpt, category, date, readTim
       <CardFooter className="pt-0 pb-4">
         <Link
           href={`/blog/${slug}`}
+          aria-label={`Read more about ${title}`}
           className="inline-flex items-center gap-1 text-xs font-semibold text-brand-blue hover:gap-2 transition-all"
         >
           Read More
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
         </Link>
       </CardFooter>
     </Card>
