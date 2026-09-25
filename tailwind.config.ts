@@ -72,7 +72,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-poppins)', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         card: '0 2px 16px rgba(0,0,0,0.08)',
