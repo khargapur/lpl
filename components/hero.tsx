@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, MessageCircle, Download, Search, ChevronRight, ChevronLeft, Loader2, FlaskConical } from "lucide-react";
@@ -204,11 +205,14 @@ export default function Hero() {
                   i === current ? "opacity-100 z-10" : "opacity-0 z-0"
                 }`}
               >
-                <img
+                <Image
                   src={slide.src}
                   alt={slide.alt}
-                  className="w-full h-full object-cover object-center"
-                  loading={i === 0 ? "eager" : "lazy"}
+                  fill
+                  sizes="(max-width: 1023px) 100vw, (max-width: 1344px) calc(100vw - 468px), 812px"
+                  className="object-cover object-center"
+                  priority={i === 0}
+                  fetchPriority={i === 0 ? "high" : "auto"}
                 />
               </div>
             ))}
