@@ -247,6 +247,7 @@ const PACKAGES: { name: string; href: string }[] = [
 
 const NEARBY_AREAS: { name: string; href: string }[] = [
   { name: "Gomti Nagar", href: "/areas/gomti-nagar" },
+  { name: "Shalimar One World", href: "/areas/shalimar-one-world" },
   { name: "Gomti Nagar Extension", href: "/areas/gomti-nagar-extension" },
   { name: "Chinhat", href: "/areas/chinhat" },
   { name: "Indira Nagar", href: "/areas/indira-nagar" },

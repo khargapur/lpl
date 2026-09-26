@@ -20,6 +20,11 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { AREAS, AREA_SLUGS, getArea } from "@/data/areas";
 import { KhargapurPage, KhargapurJsonLd, KHARGAPUR_SEO } from "./khargapur";
 import { GomtiNagarPage, GomtiNagarJsonLd, GOMTI_NAGAR_SEO } from "./gomti-nagar";
+import {
+  ShalimarOneWorldPage,
+  ShalimarOneWorldJsonLd,
+  SHALIMAR_ONE_WORLD_SEO,
+} from "./shalimar-one-world";
 
 const BASE_URL = "https://www.bloodtestinlucknow.com";
 
@@ -45,6 +50,28 @@ export async function generateMetadata({
         description: KHARGAPUR_SEO.description,
         url: `${BASE_URL}/areas/khargapur`,
       },
+      twitter: {
+        card: "summary_large_image",
+        title: KHARGAPUR_SEO.title,
+        description: KHARGAPUR_SEO.description,
+      },
+    };
+  }
+  if (slug === "shalimar-one-world") {
+    return {
+      title: { absolute: SHALIMAR_ONE_WORLD_SEO.title },
+      description: SHALIMAR_ONE_WORLD_SEO.description,
+      alternates: { canonical: "/areas/shalimar-one-world" },
+      openGraph: {
+        title: SHALIMAR_ONE_WORLD_SEO.title,
+        description: SHALIMAR_ONE_WORLD_SEO.description,
+        url: `${BASE_URL}/areas/shalimar-one-world`,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: SHALIMAR_ONE_WORLD_SEO.title,
+        description: SHALIMAR_ONE_WORLD_SEO.description,
+      },
     };
   }
   if (slug === "gomti-nagar") {
@@ -56,6 +83,11 @@ export async function generateMetadata({
         title: GOMTI_NAGAR_SEO.title,
         description: GOMTI_NAGAR_SEO.description,
         url: `${BASE_URL}/areas/gomti-nagar`,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: GOMTI_NAGAR_SEO.title,
+        description: GOMTI_NAGAR_SEO.description,
       },
     };
   }
@@ -108,6 +140,14 @@ export default async function AreaPage({
       <>
         <GomtiNagarJsonLd />
         <GomtiNagarPage />
+      </>
+    );
+  }
+  if (slug === "shalimar-one-world") {
+    return (
+      <>
+        <ShalimarOneWorldJsonLd />
+        <ShalimarOneWorldPage />
       </>
     );
   }
