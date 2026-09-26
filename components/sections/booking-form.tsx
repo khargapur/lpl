@@ -52,9 +52,77 @@ interface BookingFormProps {
   preselectedPackage?: string;
 }
 
+// Cloudflare Turnstile (spam protection, Layer 1). Renders only when the site
+// key is configured; the server falls back to honeypot+time-trap otherwise.
+// Never blocks the WhatsApp booking flow.
+function TurnstileWidget({ onToken }: { onToken: (token: string) => void }) {
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const ref = useRef<HTMLDivElement>(null);
+  const onTokenRef = useRef(onToken);
+  onTokenRef.current = onToken;
+
+  useEffect(() => {
+    if (!siteKey || !ref.current) return;
+    let widgetId: string | undefined;
+    let cancelled = false;
+    const render = () => {
+      const w = (
+        window as unknown as {
+          turnstile?: {
+            render: (el: HTMLElement, opts: Record<string, unknown>) => string;
+            remove: (id: string) => void;
+          };
+        }
+      ).turnstile;
+      if (!w || cancelled || !ref.current) return;
+      try {
+        widgetId = w.render(ref.current, {
+          sitekey: siteKey,
+          callback: (token: string) => onTokenRef.current(token),
+          "expired-callback": () => onTokenRef.current(""),
+          "error-callback": () => onTokenRef.current(""),
+        });
+      } catch {
+        /* widget unavailable; server falls back */
+      }
+    };
+    if ((window as unknown as { turnstile?: unknown }).turnstile) {
+      render();
+    } else {
+      const s = document.createElement("script");
+      s.src =
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      s.async = true;
+      s.defer = true;
+      s.onload = render;
+      document.head.appendChild(s);
+    }
+    return () => {
+      cancelled = true;
+      try {
+        const w = (
+          window as unknown as { turnstile?: { remove: (id: string) => void } }
+        ).turnstile;
+        if (widgetId !== undefined && w) w.remove(widgetId);
+      } catch {
+        /* ignore */
+      }
+    };
+  }, [siteKey]);
+
+  if (!siteKey) return null;
+  return <div ref={ref} className="flex justify-center" />;
+}
+
 export default function BookingForm({ preselectedTest, preselectedPackage }: BookingFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Lead-pipeline signals (Layer 1 anti-spam): time-trap + Turnstile token.
+  // These only gate the background lead-forward — the WhatsApp flow below
+  // always runs regardless.
+  const formLoadedAtRef = useRef<number>(Date.now());
+  const turnstileTokenRef = useRef<string>("");
 
   // Test search combobox state
   const [testQuery, setTestQuery] = useState("");
@@ -215,6 +283,38 @@ export default function BookingForm({ preselectedTest, preselectedPackage }: Boo
       "_blank",
       "noopener,noreferrer"
     );
+
+    // Background lead forward to the CRM (Layer 1 signals attached).
+    // Best-effort: must NEVER break the WhatsApp flow above.
+    try {
+      const hp = document.querySelector<HTMLInputElement>('input[name="company"]');
+      const payload = {
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        test: selectedTestLabel || data.testType,
+        testCode: data.testType,
+        collectionType: data.collectionType,
+        address: data.address || "",
+        gps: data.gpsCoords || "",
+        date: data.date,
+        time: data.timeSlot,
+        comments: data.comments || "",
+        company: hp?.value || "",
+        formLoadedAt: formLoadedAtRef.current,
+        turnstileToken: turnstileTokenRef.current,
+      };
+      fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).catch(() => {
+        /* lead forward is best-effort */
+      });
+    } catch {
+      /* never break the WhatsApp flow */
+    }
+
     setIsSubmitting(false);
     setIsSubmitted(true);
   }
@@ -503,6 +603,23 @@ export default function BookingForm({ preselectedTest, preselectedPackage }: Boo
                 <FormMessage />
               </FormItem>
             )} />
+
+            {/* Honeypot: invisible to humans, bots fill it. Server rejects silently. */}
+            <input
+              type="text"
+              name="company"
+              autoComplete="off"
+              tabIndex={-1}
+              aria-hidden="true"
+              className="hidden"
+            />
+
+            {/* Cloudflare Turnstile (renders only when site key is configured) */}
+            <TurnstileWidget
+              onToken={(t) => {
+                turnstileTokenRef.current = t;
+              }}
+            />
 
             <Button type="submit" disabled={isSubmitting} className="w-full h-11 bg-brand-blue hover:bg-brand-blue-dark rounded font-semibold">
               {isSubmitting
