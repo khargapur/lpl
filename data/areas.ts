@@ -87,6 +87,12 @@ export const AREAS: Area[] = [
       "The rapidly developing extension of Gomti Nagar with new societies and townships. We cover the entire Extension with free home sample collection — no need to travel to the main city for quality diagnostics.",
     residentialNote:
       "New-age residential sectors and gated communities along Shaheed Path and Sultanpur Road, home to young families and IT professionals.",
+    servicesNote:
+      "The Extension's new societies run on gate protocols — share your society name and tower/block on WhatsApp and our technician coordinates entry with you. We cover every sector along Shaheed Path and Sultanpur Road with same-day home collection, and RWAs regularly arrange preventive health camps with us.",
+    localInsight:
+      "One uniform price list applies everywhere in Lucknow — no Extension surcharge. Young families and IT professionals here mostly book evening slots after work, and morning slots for fasting packages.",
+    metaDescription:
+      "Blood test in Gomti Nagar Extension, Lucknow — free home collection in all societies along Shaheed Path. Same-day slots, RWA health camps, uniform pricing. Call 9451155402.",
     landmarks: ["Shaheed Path", "Sultanpur Road", "Medanta Hospital approach road", "New township sectors"],
     distanceNote: "Approx. 4–7 km from our Khargapur centre — same-day home collection available.",
     faqs: [
@@ -116,6 +122,12 @@ export const AREAS: Area[] = [
       "Lucknow's iconic heritage market and commercial heart. Professionals and shoppers in Hazratganj can book free home sample collection — or combine a lab visit with their day in the city centre.",
     residentialNote:
       "The city's historic commercial core with offices, colleges and old-city residences — busy professionals who prefer early-morning home collection before work.",
+    servicesNote:
+      "Hazratganj runs on office hours, so our collection schedule bends around them — early-morning home visits for fasting tests before work, and office-address collections for professionals who can't step out. The 10–12 km distance from our Khargapur lab is exactly why doorstep collection, with reports on WhatsApp within 24 hours, suits Ganj's working crowd.",
+    localInsight:
+      "Many Hazratganj bookings are preventive — annual Super 2 and Super 4 packages for working couples and their parents. If you prefer visiting in person, combine it with your day in the city centre; otherwise the lab comes to you.",
+    metaDescription:
+      "Blood test in Hazratganj, Lucknow — free home & office sample collection with early-morning slots for professionals. NABL-accredited, reports in 24 hrs. Call 9451155402.",
     landmarks: ["Ganj crossing", "Sahara Ganj", "Janpath market", "Hazratganj metro station"],
     distanceNote: "Approx. 10–12 km from our Khargapur centre — book a morning slot for same-day collection.",
     faqs: [
@@ -180,6 +192,12 @@ export const AREAS: Area[] = [
       "A bustling residential-commercial mix in north Lucknow. Residents of Aliganj's sectors and markets get free home sample collection with NABL-accredited accuracy — no long travel needed.",
     residentialNote:
       "Dense residential sectors with markets, schools and clinics — families who want dependable diagnostics without crossing the city.",
+    servicesNote:
+      "Aliganj's dense sectors make home collection the sensible default — one technician visit can cover the whole family's samples, from children's routine tests to parents' diabetes and thyroid panels. At 12–14 km from our Khargapur centre, doorstep collection skips the cross-city trip entirely, and morning slots keep fasting samples on schedule.",
+    localInsight:
+      "Most routine tests need no doctor's prescription, so families often book directly — CBC, sugar, thyroid and full-body packages in a single visit, with sealed, barcoded samples transported to our NABL-accredited lab under controlled conditions.",
+    metaDescription:
+      "Blood test in Aliganj, Lucknow with free home collection for the whole family in one visit. No prescription needed for routine tests, NABL-accredited reports. Call 9451155402.",
     landmarks: ["Aliganj Sector 12 market", "Kapurthala crossing", "Aliganj post office", "Sitapur Road"],
     distanceNote: "Approx. 12–14 km from our Khargapur centre — plan a morning slot for fastest reporting.",
     faqs: [
@@ -209,6 +227,12 @@ export const AREAS: Area[] = [
       "Lucknow's large northern suburb with sectors 1–6 and the Extension. We bring NABL-accredited testing to Jankipuram doorsteps with free home collection across all sectors.",
     residentialNote:
       "A sprawling suburb of plotted developments and new apartments — young families and first-home buyers who prefer digital booking and home visits.",
+    servicesNote:
+      "Jankipuram's young families tend to book digitally — online booking with UPI payment, a technician at the door in the chosen slot, and reports on WhatsApp. We cover sectors 1–6 and the Extension alike, and diabetes-care panels (HbA1c, fasting/PP sugar, thyroid) are among the most collected tests here.",
+    localInsight:
+      "Plans change — rescheduling is free up to 2 hours before the slot on a call or WhatsApp message. Morning slots are recommended since Jankipuram is 14–16 km from our Khargapur centre, keeping sample transit times short.",
+    metaDescription:
+      "Book blood tests online in Jankipuram, Lucknow — free home collection across sectors 1–6 & Extension. UPI payment, diabetes & thyroid panels at home. Call 9451155402.",
     landmarks: ["Jankipuram Sector 3–6", "Jankipuram Extension", "Kursi Road", "Engineering College crossing"],
     distanceNote: "Approx. 14–16 km from our Khargapur centre — morning slots recommended.",
     faqs: [
@@ -238,6 +262,12 @@ export const AREAS: Area[] = [
       "The busy gateway of south Lucknow around the bus station and metro line. Alambagh residents and commuters can book free home sample collection without navigating the crowded market roads.",
     residentialNote:
       "A high-traffic transit and market hub with dense residential lanes — ideal for home collection that skips the traffic entirely.",
+    servicesNote:
+      "Alambagh's commuters leave early, so we start early too — 7 AM home slots collect fasting samples before you head out, skipping the market-road traffic entirely. The crowds around the bus and metro stations make doorstep collection far more practical than a lab trip through the congested lanes.",
+    localInsight:
+      "In monsoon, fever panels (Dengue NS1, Typhoid, CBC, CRP) are the most booked tests here — all collected at home. Every booking includes a GST invoice for reimbursements and corporate claims.",
+    metaDescription:
+      "Blood test in Alambagh, Lucknow — 7 AM home collection slots for commuters near metro & bus station. Fever panels, GST invoice included. Call 9451155402.",
     landmarks: ["Alambagh bus station", "Alambagh metro station", "Singar Nagar", "Krishna Nagar"],
     distanceNote: "Approx. 12–14 km from our Khargapur centre via Shaheed Path — morning slots best.",
     faqs: [
@@ -267,6 +297,12 @@ export const AREAS: Area[] = [
       "The well-planned LDA colony on Kanpur Road with sectors A–L. Aashiana families get free home sample collection with the same NABL-accredited quality as our Khargapur centre.",
     residentialNote:
       "A large, organised LDA residential colony — middle-class families and government employees who value affordable, trustworthy healthcare.",
+    servicesNote:
+      "Aashiana's families watch value closely — Super 1's 40-test annual package at ₹1250 is the most booked option here, with blood sugar at ₹50 and CBC at ₹210 for routine needs. Government employees commonly use our GST invoices and NABL-accredited reports for medical reimbursement claims.",
+    localInsight:
+      "Our technicians are experienced with paediatric collection and carry child-friendly kits, so children's samples are collected at home without a clinic trip. Same-day slots are usually available across sectors A–L and Ruchi Khand.",
+    metaDescription:
+      "Affordable blood tests in Aashiana, Lucknow — Super 1 package ₹1250, free home collection across sectors A–L. GST invoice for reimbursement. Call 9451155402.",
     landmarks: ["Aashiana Sector C–L", "Kanpur Road", "Power House crossing", "Ruchi Khand"],
     distanceNote: "Approx. 10–12 km from our Khargapur centre — same-day slots usually available.",
     faqs: [
@@ -296,6 +332,12 @@ export const AREAS: Area[] = [
       "The growing suburb on Faizabad Road with new societies and the industrial belt. Chinhat residents no longer need to travel into the city — our free home collection brings the lab to your door.",
     residentialNote:
       "An expanding suburb mixing new residential societies with industrial areas — working families who need flexible, at-home diagnostics.",
+    servicesNote:
+      "Chinhat's mix of new residential societies and the Faizabad Road industrial belt shapes how we serve it — our technicians cover the corridor from Chinhat crossing towards BBD on scheduled routes, and we regularly handle group bookings for factory and industrial staff alongside individual home visits. Morning slots suit both shift workers and families in the new societies.",
+    localInsight:
+      "Many residents previously travelled into the city for accredited testing; home collection now covers Chinhat and the Faizabad Road societies fully. Industries nearby can also arrange on-site group health camps by calling +91 9451155402.",
+    metaDescription:
+      "Blood test in Chinhat, Lucknow with free home collection along Faizabad Road — new societies & industrial belt covered. Group bookings available, NABL-accredited reports. Call 9451155402.",
     landmarks: ["Chinhat crossing", "Faizabad Road", "Deva Road", "New societies on Faizabad Road"],
     distanceNote: "Approx. 8–10 km from our Khargapur centre — home visits available 7 days a week.",
     faqs: [
