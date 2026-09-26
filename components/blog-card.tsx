@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { CardContent, CardFooter } from "@/components/ui/card";
 import { Clock, ArrowRight } from "lucide-react";
 
 interface BlogCardProps {
@@ -16,7 +16,11 @@ interface BlogCardProps {
 
 export default function BlogCard({ slug, title, excerpt, category, date, readTime, image }: BlogCardProps) {
   return (
-    <Card className="group overflow-hidden bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100">
+    <Link
+      href={`/blog/${slug}`}
+      aria-label={`Read more about ${title}`}
+      className="group block overflow-hidden bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100"
+    >
       <div className="relative h-44 overflow-hidden">
         <Image
           src={image}
@@ -47,15 +51,11 @@ export default function BlogCard({ slug, title, excerpt, category, date, readTim
       </CardContent>
 
       <CardFooter className="pt-0 pb-4">
-        <Link
-          href={`/blog/${slug}`}
-          aria-label={`Read more about ${title}`}
-          className="inline-flex items-center gap-1 text-xs font-semibold text-brand-blue hover:gap-2 transition-all"
-        >
+        <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand-blue group-hover:gap-2 transition-all">
           Read More
           <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-        </Link>
+        </span>
       </CardFooter>
-    </Card>
+    </Link>
   );
 }
