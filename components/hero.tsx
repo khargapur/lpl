@@ -9,10 +9,12 @@ import { Phone, MapPin, MessageCircle, Download, Search, ChevronRight, ChevronLe
 import { SITE_CONFIG, HEALTH_PACKAGES } from "@/lib/constants";
 import { Input } from "@/components/ui/input";
 
+import HeroLcpImage, { HERO_LCP_SLIDE, HERO_SLIDE_SIZES } from "@/components/hero-lcp-image";
+
 const SLIDES = [
   {
-    src: "/images/maxresdefault.jpg",
-    alt: "Dr Lal PathLabs Khargapur, Gomti Nagar Lucknow – diagnostic lab services",
+    src: HERO_LCP_SLIDE.src,
+    alt: HERO_LCP_SLIDE.alt,
   },
   {
     src: "/images/fever-panel-advance.jpg",
@@ -198,22 +200,24 @@ export default function Hero() {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            {/* Slides */}
-            {SLIDES.map((slide, i) => (
+            {/* Base layer — LCP slide, server-rendered, no client JS dependency */}
+            <HeroLcpImage />
+
+            {/* Overlay slides (2+) — client-rendered for carousel crossfade */}
+            {SLIDES.slice(1).map((slide, i) => (
               <div
                 key={slide.src}
                 className={`absolute inset-0 transition-opacity duration-700 ${
-                  i === current ? "opacity-100 z-10" : "opacity-0 z-0"
+                  i + 1 === current ? "opacity-100 z-10" : "opacity-0 z-0"
                 }`}
               >
                 <Image
                   src={slide.src}
                   alt={slide.alt}
                   fill
-                  sizes="(max-width: 1023px) 100vw, (max-width: 1344px) calc(100vw - 468px), 812px"
+                  sizes={HERO_SLIDE_SIZES}
                   className="object-cover object-center"
-                  priority={i === 0}
-                  fetchPriority={i === 0 ? "high" : "auto"}
+                  fetchPriority="auto"
                 />
               </div>
             ))}

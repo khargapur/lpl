@@ -1,5 +1,3 @@
-"use client";
-
 import { TESTIMONIALS } from "@/lib/constants";
 
 interface TestimonialsSectionProps {
