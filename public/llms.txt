@@ -1,36 +1,33 @@
 # Dr. Lal PathLabs Patient Service Centre - Khargapur, Gomti Nagar, Lucknow
 
-> Authorized Patient Service Centre (franchise) of Dr. Lal PathLabs in Khargapur, Gomti Nagar, Lucknow, Uttar Pradesh, India. This website is the local centre website, not the official corporate website of Dr. Lal PathLabs Ltd.
-
-This site provides information for local patients about blood tests, diagnostic services, health checkup packages, booking and home sample collection in Lucknow. Prices and availability can change; patients should confirm current details before booking or visiting.
+> Authorized Patient Service Centre (franchise) of Dr. Lal PathLabs in Khargapur, Gomti Nagar, Lucknow, Uttar Pradesh, India.
 
 ## Centre
 
 - [Home](https://www.bloodtestinlucknow.com/): Main website and centre information
-- [Contact](https://www.bloodtestinlucknow.com/contact): Contact details, hours and booking assistance
-- [About](https://www.bloodtestinlucknow.com/about): Centre and service information
-- [Home collection](https://www.bloodtestinlucknow.com/home-collection): Home sample collection information
+- [About](https://www.bloodtestinlucknow.com/about): Centre information
+- [Contact](https://www.bloodtestinlucknow.com/contact): Contact details and booking assistance
 - [Book a test](https://www.bloodtestinlucknow.com/book-test): Test booking
+- [Home collection](https://www.bloodtestinlucknow.com/home-collection): Home sample collection
 
-## Tests and packages
+## Tests and Packages
 
-- [All tests](https://www.bloodtestinlucknow.com/tests): Blood tests and diagnostic tests
+- [All tests](https://www.bloodtestinlucknow.com/tests): Blood and diagnostic tests
 - [Health packages](https://www.bloodtestinlucknow.com/health-packages): Health checkup packages
-- [FAQ](https://www.bloodtestinlucknow.com/faq): Common questions about tests, booking and services
+- [FAQ](https://www.bloodtestinlucknow.com/faq): Frequently asked questions
 
-## Service areas
+## Service Areas
 
-- [Khargapur](https://www.bloodtestinlucknow.com/areas/khargapur): Dr. Lal PathLabs services in Khargapur
+- [Khargapur](https://www.bloodtestinlucknow.com/areas/khargapur): Blood tests and diagnostic services in Khargapur
 - [Gomti Nagar](https://www.bloodtestinlucknow.com/areas/gomti-nagar): Blood tests and home collection in Gomti Nagar
 - [Shalimar One World](https://www.bloodtestinlucknow.com/areas/shalimar-one-world): Blood test services near Shalimar One World
-- [Gomti Nagar Extension](https://www.bloodtestinlucknow.com/areas/gomti-nagar-extension): Service information for Gomti Nagar Extension
+- [Gomti Nagar Extension](https://www.bloodtestinlucknow.com/areas/gomti-nagar-extension): Services in Gomti Nagar Extension
 
-## Health information
+## Health Information
 
-- [Health blog](https://www.bloodtestinlucknow.com/blog): Articles about blood tests, health and common conditions
+- [Health blog](https://www.bloodtestinlucknow.com/blog): Health and diagnostic information
 
-## Optional
+## Important
 
 - [Privacy Policy](https://www.bloodtestinlucknow.com/privacy-policy): Privacy information
 - [Terms and Conditions](https://www.bloodtestinlucknow.com/terms): Website terms
-- [Download report](https://www.bloodtestinlucknow.com/download-report): Report access information
