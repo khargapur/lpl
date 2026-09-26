@@ -12,6 +12,12 @@ export interface Area {
   distanceNote: string;
   /** 4 area-flavoured FAQs */
   faqs: { q: string; a: string }[];
+  /** unique replacement for the templated services paragraph (optional) */
+  servicesNote?: string;
+  /** one extra area-specific paragraph (optional) */
+  localInsight?: string;
+  /** per-area meta description override (optional) */
+  metaDescription?: string;
 }
 
 export const AREAS: Area[] = [
@@ -139,6 +145,12 @@ export const AREAS: Area[] = [
       "One of Lucknow's largest residential colonies, stretching across sectors A to C. We serve every block of Indira Nagar with free doorstep sample collection by trained phlebotomists.",
     residentialNote:
       "A vast, well-established residential colony of independent houses and apartments — many families and elderly residents who rely on home healthcare.",
+    servicesNote:
+      "Across Indira Nagar's wide sector grid, home collection is the practical option — our phlebotomists run planned morning routes through Sectors A, B and C, so fasting samples for sugar, lipid and thyroid profiles are collected early and reach our Khargapur lab the same morning. Elderly residents and working professionals around Bhootnath, Takrohi and Munshipulia commonly book the 7–10 AM slots.",
+    localInsight:
+      "Because the colony stretches several kilometres from Bhootnath market to Faizabad Road, many residents prefer skipping the trip for routine tests. Home collection covers the full sector grid, and reports for most routine tests arrive on WhatsApp and email within 24 hours — no follow-up visit needed.",
+    metaDescription:
+      "Free home blood sample collection across Indira Nagar Sectors A–C, Lucknow — Bhootnath, Takrohi & Munshipulia covered. NABL-accredited reports in 24 hrs, packages from ₹1250. Call 9451155402.",
     landmarks: ["Bhootnath market", "Indira Nagar Sector 18–25", "Munshipulia crossing", "Faizabad Road"],
     distanceNote: "Approx. 8–10 km from our Khargapur centre — home collection available all 7 days.",
     faqs: [

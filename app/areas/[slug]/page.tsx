@@ -93,7 +93,9 @@ export async function generateMetadata({
   }
   return {
     title: `Blood Test in ${area.name}, Lucknow | Free Home Sample Collection | Dr. Lal PathLabs`,
-    description: `Book blood tests & health checkups in ${area.name}, Lucknow with free home sample collection. NABL-accredited Dr. Lal PathLabs centre — CBC ₹210, packages from ₹1250. Call ${SITE_CONFIG.phone}.`,
+    description:
+      area.metaDescription ??
+      `Book blood tests & health checkups in ${area.name}, Lucknow with free home sample collection. NABL-accredited Dr. Lal PathLabs centre — CBC ₹210, packages from ₹1250. Call ${SITE_CONFIG.phone}.`,
     keywords: [
       `blood test ${area.shortName} Lucknow`,
       `pathology lab ${area.shortName}`,
@@ -280,11 +282,12 @@ export default async function AreaPage({
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">{area.residentialNote}</p>
               <p className="text-gray-600 leading-relaxed">
-                Instead of travelling across the city, {area.shortName} residents can get every routine and
-                specialised test — CBC, blood sugar, HbA1c, thyroid, lipid, liver and kidney profiles, fever
-                panels and full-body health packages — collected from home and processed at our NABL-accredited
-                laboratory in Khargapur, Gomti Nagar.
+                {area.servicesNote ??
+                  `Instead of travelling across the city, ${area.shortName} residents can get every routine and specialised test — CBC, blood sugar, HbA1c, thyroid, lipid, liver and kidney profiles, fever panels and full-body health packages — collected from home and processed at our NABL-accredited laboratory in Khargapur, Gomti Nagar.`}
               </p>
+              {area.localInsight && (
+                <p className="text-gray-600 leading-relaxed mt-4">{area.localInsight}</p>
+              )}
             </div>
             <div className="bg-light-bg rounded-xl p-6 border border-gray-100">
               <h3 className="font-semibold text-brand-blue mb-4">Neighbourhoods & Landmarks We Cover Nearby</h3>
