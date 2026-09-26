@@ -1,5 +1,3 @@
-"use client";
-
 import { Award, Clock, Home, Shield, Wallet, Headset } from "lucide-react";
 
 const REASONS = [
