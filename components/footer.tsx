@@ -22,6 +22,7 @@ const aboutLinks = [
 const areaLinks = [
   { href: "/areas/khargapur", label: "Blood Test in Khargapur" },
   { href: "/areas/gomti-nagar", label: "Blood Test in Gomti Nagar" },
+  { href: "/areas/shalimar-one-world", label: "Blood Test near Shalimar One World" },
   { href: "/areas/gomti-nagar-extension", label: "Blood Test in Gomti Nagar Ext." },
   { href: "/areas/hazratganj", label: "Blood Test in Hazratganj" },
   { href: "/areas/indira-nagar", label: "Blood Test in Indira Nagar" },

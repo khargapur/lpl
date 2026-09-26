@@ -23,9 +23,9 @@ const ADDRESS_HI =
   "संस्कार वाटिका के सामने, अवधपुरी-2, खरगापुर, गोमती नगर, लखनऊ – 226010";
 
 export const GOMTI_NAGAR_SEO = {
-  title: "Blood Test in Gomti Nagar, Lucknow | Dr. Lal PathLabs",
+  title: "Dr Lal PathLabs Gomti Nagar, Lucknow | Blood Test & Home Collection",
   description:
-    "Book blood tests and home sample collection in Gomti Nagar, Lucknow through Dr. Lal PathLabs Khargapur. CBC, HbA1c, thyroid, lipid profile, health checkups and more.",
+    "Blood tests and home sample collection in Gomti Nagar, Lucknow. Dr Lal PathLabs services for CBC, thyroid, diabetes, vitamin tests, health packages and other diagnostic tests.",
 };
 
 /* FAQs: aText = plain text for schema (no raw URLs), aJsx = visible answer (may contain links) */
@@ -147,15 +147,30 @@ export const GOMTI_NAGAR_FAQS: { q: string; aText: string; aJsx: React.ReactNode
     ),
   },
   {
-    q: "I searched for \u201cblood test near me in Gomti Nagar\u201d — what is the nearest centre?",
+    q: "I searched for \u201cblood test near me in Gomti Nagar\u201d — which centre is this website for?",
     aText:
-      "The nearest physical centre is the Dr Lal PathLabs Patient Service Centre in Khargapur, Gomti Nagar (In front of Sanskar Vatika, Awadhpuri-2, Lucknow \u2013 226010). If visiting is inconvenient, free home sample collection can bring the service to your doorstep in Gomti Nagar \u2014 the team confirms coverage for your exact location when you book.",
+      "This website belongs to the Dr Lal PathLabs Patient Service Centre (franchise code CC14735) in Khargapur, Gomti Nagar (In front of Sanskar Vatika, Awadhpuri-2, Lucknow \u2013 226010). If visiting is inconvenient, free home sample collection can bring the service to your doorstep in Gomti Nagar \u2014 the team confirms coverage for your exact location when you book.",
     aJsx: (
       <>
-        The nearest physical centre is the Dr Lal PathLabs Patient Service Centre in Khargapur,
-        Gomti Nagar ({ADDRESS_EN}). If visiting is inconvenient, free home sample collection can
-        bring the service to your doorstep in Gomti Nagar — the team confirms coverage for your
-        exact location when you book.
+        This website belongs to the Dr Lal PathLabs Patient Service Centre (franchise code
+        CC14735) in Khargapur, Gomti Nagar ({ADDRESS_EN}). If visiting is inconvenient, free
+        home sample collection can bring the service to your doorstep in Gomti Nagar — the team
+        confirms coverage for your exact location when you book.
+      </>
+    ),
+  },
+  {
+    q: "Do you serve Sector 6 and Shalimar One World in Gomti Nagar?",
+    aText:
+      "Yes. Home sample collection can be arranged for Sector 6 and the Shalimar One World residential area for eligible tests, subject to slot confirmation. See the dedicated Shalimar One World page for area-specific details, or call +91 9451155402 to confirm a slot for your address.",
+    aJsx: (
+      <>
+        Yes. Home sample collection can be arranged for Sector 6 and the Shalimar One World
+        residential area for eligible tests, subject to slot confirmation. See the dedicated{" "}
+        <Link href="/areas/shalimar-one-world" className="text-brand-blue underline">
+          Shalimar One World page
+        </Link>{" "}
+        for area-specific details, or call {PHONE_DISPLAY} to confirm a slot for your address.
       </>
     ),
   },
@@ -167,7 +182,7 @@ export function GomtiNagarJsonLd() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Blood Test in Gomti Nagar, Lucknow", item: PAGE_URL },
+      { "@type": "ListItem", position: 2, name: "Dr Lal PathLabs in Gomti Nagar, Lucknow", item: PAGE_URL },
     ],
   };
   const clinic = {
@@ -191,7 +206,7 @@ export function GomtiNagarJsonLd() {
   const webpage = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    name: "Blood Test & Home Collection in Gomti Nagar, Lucknow",
+    name: "Dr Lal PathLabs in Gomti Nagar, Lucknow – Blood Test & Home Collection",
     url: PAGE_URL,
     inLanguage: "en",
     description: GOMTI_NAGAR_SEO.description,
@@ -248,6 +263,7 @@ const POPULAR_TESTS: { name: string; href: string; note: string }[] = [
   { name: "Liver Function Test (LFT)", href: "/tests/liver-panel-1-lft", note: "Checks liver health markers." },
   { name: "Kidney Function Test (KFT)", href: "/tests/kidney-panel-kft", note: "Checks kidney health markers." },
   { name: "Vitamin D", href: "/tests/vitamin-d-25-hydroxy", note: "Commonly advised for bone health and fatigue." },
+  { name: "Vitamin B12", href: "/tests/vitamin-b12-cyanocobala-min", note: "Checks B12 levels; advised for fatigue and nerve health." },
 ];
 
 const PACKAGES: { name: string; href: string }[] = [
@@ -271,6 +287,8 @@ const LOCALITIES = [
   "Viram Khand",
   "Vipul Khand",
   "Patrakarpuram",
+  "Sector 6",
+  "Shalimar One World",
   "Gomti Nagar Extension",
 ];
 
@@ -293,12 +311,13 @@ export function GomtiNagarPage() {
                   <MapPin className="w-3.5 h-3.5" /> Gomti Nagar, Lucknow
                 </span>
                 <h1 className="text-4xl md:text-5xl font-bold font-heading">
-                  Blood Test &amp; Home Collection in Gomti Nagar, Lucknow
+                  Dr Lal PathLabs in Gomti Nagar, Lucknow – Blood Test &amp; Home Collection
                 </h1>
                 <p className="text-white/85 text-lg">
-                  If you live in Gomti Nagar and need a blood test, you have two easy options:
-                  visit the Dr Lal PathLabs Patient Service Centre in nearby Khargapur, or book
-                  free home sample collection and have your sample taken at your doorstep.
+                  If you live in Gomti Nagar and need a blood test, you have two easy options
+                  with our team: visit the Dr Lal PathLabs Patient Service Centre in Khargapur,
+                  or book free home sample collection and have your sample taken at your
+                  doorstep.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <ButtonLink href="/book-test" primary>
@@ -475,11 +494,15 @@ export function GomtiNagarPage() {
           </ul>
           <p>
             Don&apos;t see your exact sector? Call {PHONE_DISPLAY} — if you are in Gomti Nagar,
-            the team will confirm whether your location can be served. There is also a separate{" "}
+            the team will confirm whether your location can be served. There are also separate{" "}
             <Link href="/areas/gomti-nagar-extension" className="text-brand-blue underline">
               Gomti Nagar Extension
             </Link>{" "}
-            page with area-specific details.
+            and{" "}
+            <Link href="/areas/shalimar-one-world" className="text-brand-blue underline">
+              Shalimar One World
+            </Link>{" "}
+            pages with area-specific details.
           </p>
         </Section>
 
@@ -524,6 +547,27 @@ export function GomtiNagarPage() {
               </p>
             </div>
           </div>
+        </Section>
+
+        <Section title="Why Gomti Nagar residents use the Khargapur / Sector 6 service area">
+          <p>
+            This website belongs to the Dr Lal PathLabs Patient Service Centre (franchise code
+            CC14735) located in Khargapur, Gomti Nagar — in the Sector 6 side of the township,
+            opposite Sanskar Vatika, Awadhpuri-2. Patients from across Gomti Nagar — Vibhuti
+            Khand, Viraj Khand, Patrakarpuram, Sector 6 and nearby residential pockets such as{" "}
+            <Link href="/areas/shalimar-one-world" className="text-brand-blue underline">
+              Shalimar One World
+            </Link>{" "}
+            — use this centre for sample collection and test bookings, or choose home sample
+            collection instead of travelling.
+          </p>
+          <p>
+            To be clear: there are several Dr Lal PathLabs locations across Gomti Nagar. The
+            centre described on this page is the franchise-run Patient Service Centre in
+            Khargapur that operates this website and its booking line ({PHONE_DISPLAY}). If
+            you are unsure which location suits you, call the number and the team will guide
+            you — including whether home collection can cover your address.
+          </p>
         </Section>
 
         <Section title="How booking works">

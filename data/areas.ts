@@ -305,6 +305,36 @@ export const AREAS: Area[] = [
       },
     ],
   },
+  {
+    slug: "shalimar-one-world",
+    name: "Shalimar One World",
+    shortName: "Shalimar One World",
+    intro:
+      "Blood tests and home sample collection for Shalimar One World and the surrounding Sector 6 / Gomti Nagar pockets, served by the Dr Lal PathLabs Patient Service Centre (franchise code CC14735) in Khargapur, Lucknow.",
+    residentialNote:
+      "A residential neighbourhood in the Gomti Nagar region of Lucknow, close to Sector 6 — served by the Khargapur Patient Service Centre for sample collection and test bookings.",
+    landmarks: ["Shalimar One World", "Sector 6, Gomti Nagar", "Khargapur, Gomti Nagar"],
+    distanceNote:
+      "Served by the Dr Lal PathLabs Patient Service Centre in Khargapur, Gomti Nagar (226010). Home sample collection may be available subject to test, location and collection-slot availability.",
+    faqs: [
+      {
+        q: "Is home blood sample collection available near Shalimar One World?",
+        a: "Home sample collection may be available for eligible tests near Shalimar One World, subject to collection-slot availability. Call +91 9451155402 to confirm a slot for your address.",
+      },
+      {
+        q: "Which Dr Lal PathLabs centre serves Shalimar One World?",
+        a: "This website belongs to the Dr Lal PathLabs Patient Service Centre (franchise code CC14735) in Khargapur, Gomti Nagar, Lucknow — serving Shalimar One World and nearby Sector 6 / Gomti Nagar areas.",
+      },
+      {
+        q: "Which blood tests can I book near Shalimar One World?",
+        a: "CBC, blood sugar, HbA1c, thyroid profile, lipid profile, liver and kidney function tests, vitamin D, vitamin B12 and full-body health checkup packages — see the full tests catalogue on this website.",
+      },
+      {
+        q: "How do I book a blood test near Shalimar One World?",
+        a: "Call or WhatsApp +91 9451155402, or book online. Keep your doctor's test list ready, along with your preferred date, slot and complete address.",
+      },
+    ],
+  },
 ];
 
 export const AREA_SLUGS = AREAS.map((a) => a.slug);
