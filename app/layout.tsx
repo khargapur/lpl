@@ -179,6 +179,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <link rel="dns-prefetch" href="https://media.lalpathlabs.com" />
+        <link rel="describedby" href="/llms.txt" type="text/markdown" />
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
